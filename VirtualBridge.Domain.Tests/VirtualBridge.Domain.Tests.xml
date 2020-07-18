@@ -35,6 +35,51 @@
             Gets the property2.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestEmptyGuidThrowsException">
+            <summary>
+            Tests that an empty unique identifier throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestNullNameThrowsException">
+            <summary>
+            Tests that a null name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestEmptyNameThrowsException">
+            <summary>
+            Tests that a empty name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestLongNameThrowsException">
+            <summary>
+            Tests that a long name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestNullDescriptionThrowsException">
+            <summary>
+            Tests that a null description throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestEmptyDescriptionThrowsException">
+            <summary>
+            Tests that a empty description throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestLongDescriptionThrowsException">
+            <summary>
+            Tests that a long description throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestNullOrganisationThrowsException">
+            <summary>
+            Tests that a null organisation throws exception.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests">
             <summary>
             Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.Hosts.IHost"/>.
@@ -155,6 +200,21 @@
             Tests that a long code throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.RegularCompetitions.IRegularCompetition"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestInvalidTimeOfDayThrowsException">
+            <summary>
+            Tests that an invalid of day throws exception.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests">
             <summary>
             Test the <see cref="M:VirtualBridge.Domain.ValidationAttributes.ValidIdAttribute.IsValid(System.Object)"/> method.
@@ -173,6 +233,61 @@
         <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests.TestNonGuidIsInvalidId">
             <summary>
             Tests that a non-Guid is an invalid id.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests">
+            <summary>
+            Test the <see cref="M:VirtualBridge.Domain.ValidationAttributes.ValidTimeOfDayAttribute.IsValid(System.Object)"/> method.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestNullIsValidTimeOfDay">
+            <summary>
+            Tests that a null is a valid time of day.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.Test0000IsValidTimeOfDay">
+            <summary>
+            Test that 00:00 is valid time of day.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.Test2359IsValidTimeOfDay">
+            <summary>
+            Test that 23:59 is valid time of day.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestAfternoonTimeWithMinutesIsValid">
+            <summary>
+            Tests that afternoon time with minutes is valid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestNegativeTimeIsInvalid">
+            <summary>
+            Tests that negative time is invalid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestExactly24HoursIsInvalid">
+            <summary>
+            Test that exactly 24 hours is invalid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestMoreThanOneDayIsInvalid">
+            <summary>
+            Tests that more than one day is invalid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestWithSecondsIsInvalid">
+            <summary>
+            Tests that a time with seconds is invalid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestWithMillisecondsIsInvalid">
+            <summary>
+            Tests that a time with milliseconds is invalid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestNonTimeSpanIsInvalidId">
+            <summary>
+            Tests that a non-timeSpan is invalid.
             </summary>
         </member>
     </members>

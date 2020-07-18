@@ -15,6 +15,88 @@
             </summary>
             <param name="model">The model.</param>
         </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Competitions.Competition">
+            <summary>
+            Competition.
+            </summary>
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition" />
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.Competitions.Competition.#ctor(System.Guid,System.String,System.String,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.DomainObjects.Competitions.Competition"/> class.
+            </summary>
+            <param name="id">Competition Id.</param>
+            <param name="name">Competition Name.</param>
+            <param name="description">Description.</param>
+            <param name="organisation">Organisation.</param>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.Competition.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.Competition.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.Competition.Description">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.Competition.Organisation">
+            <inheritdoc />
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition">
+            <summary>
+            Competition.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition.Id">
+            <summary>
+            Gets the Competition Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition.Name">
+            <summary>
+            Gets the Competition Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition.Description">
+            <summary>
+            Gets the Description.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition.Organisation">
+            <summary>
+            Gets the Organisation.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Competitions.Metadata.Description">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition.Description"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Competitions.Metadata.Description.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Competitions.Metadata.Description.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Competitions.Metadata.Name">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition.Name"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Competitions.Metadata.Name.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Competitions.Metadata.Name.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.DomainObjects.Hosts.Host">
             <summary>
             Virtual Bridge Club Host.
@@ -208,6 +290,46 @@
         <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.Code">
             <inheritdoc/>
         </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.RegularCompetitions.IRegularCompetition">
+            <summary>
+            Regular Competition.
+            </summary>
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.Competitions.ICompetition" />
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.RegularCompetitions.IRegularCompetition.DayOfWeek">
+            <summary>
+            Gets the Day of Week.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.RegularCompetitions.IRegularCompetition.TimeOfDay">
+            <summary>
+            Gets the Time of day.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.RegularCompetitions.RegularCompetition">
+            <summary>
+            Regular Competition.
+            </summary>
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.Competitions.Competition" />
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.RegularCompetitions.IRegularCompetition" />
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.RegularCompetitions.RegularCompetition.#ctor(System.Guid,System.String,System.String,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation,System.DayOfWeek,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.DomainObjects.RegularCompetitions.RegularCompetition"/> class.
+            </summary>
+            <param name="id">Competition Id.</param>
+            <param name="name">Competition Name.</param>
+            <param name="description">Description.</param>
+            <param name="organisation">Organisation.</param>
+            <param name="dayOfWeek">Day of the Week.</param>
+            <param name="timeOfDay">Time of the Day.</param>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.RegularCompetitions.RegularCompetition.DayOfWeek">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.RegularCompetitions.RegularCompetition.TimeOfDay">
+            <inheritdoc/>
+        </member>
         <member name="T:VirtualBridge.Domain.Exceptions.ValidationResultException">
             <summary>
             ValidationException.
@@ -254,6 +376,18 @@
             <inheritdoc />
         </member>
         <member name="M:VirtualBridge.Domain.ValidationAttributes.ValidIdAttribute.FormatErrorMessage(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VirtualBridge.Domain.ValidationAttributes.ValidTimeOfDayAttribute">
+            <summary>
+            Validate HH:MM.
+            </summary>
+            <seealso cref="T:System.ComponentModel.DataAnnotations.ValidationAttribute" />
+        </member>
+        <member name="M:VirtualBridge.Domain.ValidationAttributes.ValidTimeOfDayAttribute.IsValid(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Domain.ValidationAttributes.ValidTimeOfDayAttribute.FormatErrorMessage(System.String)">
             <inheritdoc/>
         </member>
     </members>
