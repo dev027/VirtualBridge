@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualBridge.Domain.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Domain.DomainObjects.BaseDomainModel.Validate(VirtualBridge.Domain.DomainObjects.BaseDomainModel)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests.TestMultipleValidationErrorsThrowsAggregateException">
+            <summary>
+            Tests that multiple validation errors throws an aggregate exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests.MyTestClass">
+            <summary>
+            Test Class inheriting from BaseDomainModel.
+            </summary>
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.BaseDomainModel" />
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests.MyTestClass.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests.MyTestClass"/> class.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests.MyTestClass.Property1">
+            <summary>
+            Gets the property1.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests.MyTestClass.Property2">
+            <summary>
+            Gets the property2.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.Hosts.IHost"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestEmptyGuidThrowsException">
+            <summary>
+            Tests that an empty unique identifier throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestNullFirstNameThrowsException">
+            <summary>
+            Tests that a null first name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestEmptyFirstNameThrowsException">
+            <summary>
+            Tests that a empty first name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestLongFirstNameThrowsException">
+            <summary>
+            Tests that a long first name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestNullSurnameThrowsException">
+            <summary>
+            Tests that a null surname throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestEmptySurnameThrowsException">
+            <summary>
+            Tests that a empty surname throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Hosts.HostTests.ConstructorTests.TestLongSurnameThrowsException">
+            <summary>
+            Tests that a long surname throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestEmptyGuidThrowsException">
+            <summary>
+            Tests that an empty unique identifier throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestNullShortNameThrowsException">
+            <summary>
+            Tests that a null short name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestEmptyShortNameThrowsException">
+            <summary>
+            Tests that a empty short name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestLongShortNameThrowsException">
+            <summary>
+            Tests that a long short name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestNullMediumNameThrowsException">
+            <summary>
+            Tests that a null medium name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestEmptyMediumNameThrowsException">
+            <summary>
+            Tests that a empty medium name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestLongMediumNameThrowsException">
+            <summary>
+            Tests that a long medium name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestNullLongNameThrowsException">
+            <summary>
+            Tests that a null long name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestEmptyLongNameThrowsException">
+            <summary>
+            Tests that a empty long name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestLongLongNameThrowsException">
+            <summary>
+            Tests that a long long name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestNullCodeThrowsException">
+            <summary>
+            Tests that a null code throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestEmptyCodeThrowsException">
+            <summary>
+            Tests that a empty code throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestLongCodeThrowsException">
+            <summary>
+            Tests that a long code throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests">
+            <summary>
+            Test the <see cref="M:VirtualBridge.Domain.ValidationAttributes.ValidIdAttribute.IsValid(System.Object)"/> method.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests.TestNewGuidIsValidId">
+            <summary>
+            Tests that a new Guid is a valid id.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests.TestEmptyGuidIsInvalidId">
+            <summary>
+            Tests that an empty Guid is an invalid id.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests.TestNonGuidIsInvalidId">
+            <summary>
+            Tests that a non-Guid is an invalid id.
+            </summary>
+        </member>
+    </members>
+</doc>

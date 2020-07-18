@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualBridge.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:VirtualBridge.Domain.DomainObjects.BaseDomainModel">
+            <summary>
+            Base model for all models in the Domain project.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.BaseDomainModel.Validate(VirtualBridge.Domain.DomainObjects.BaseDomainModel)">
+            <summary>
+            Validates the specified model.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Hosts.Host">
+            <summary>
+            Virtual Bridge Club Host.
+            </summary>
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.Hosts.IHost" />
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.Hosts.Host.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.DomainObjects.Hosts.Host"/> class.
+            </summary>
+            <param name="id">Host Id.</param>
+            <param name="firstName">First Name.</param>
+            <param name="surname">Surname.</param>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Hosts.Host.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Hosts.Host.FirstName">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Hosts.Host.Surname">
+            <inheritdoc/>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Hosts.IHost">
+            <summary>
+            Virtual Bridge Club Host.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Hosts.IHost.Id">
+            <summary>
+            Gets the Host Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Hosts.IHost.FirstName">
+            <summary>
+            Gets the Host First Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Hosts.IHost.Surname">
+            <summary>
+            Gets the Host Surname.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Hosts.Metadata.FirstName">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Hosts.IHost.FirstName"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Hosts.Metadata.FirstName.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Hosts.Metadata.FirstName.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Hosts.Metadata.Surname">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Hosts.IHost.Surname"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Hosts.Metadata.Surname.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Hosts.Metadata.Surname.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation">
+            <summary>
+            Organisation.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.Id">
+            <summary>
+            Gets the Organisation Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.ShortName">
+            <summary>
+            Gets the Short Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.MediumName">
+            <summary>
+            Gets the Medium Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.LongName">
+            <summary>
+            Gets the Long Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.Code">
+            <summary>
+            Gets the Code.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.Code">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.Code"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.Code.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.Code.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.LongName">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.LongName"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.LongName.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.LongName.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.MediumName">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.MediumName"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.MediumName.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.MediumName.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.ShortName">
+            <summary>
+            Metadata for <see cref="P:VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation.ShortName"/>.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.ShortName.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.Organisations.Metadata.ShortName.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.Organisations.Organisation">
+            <summary>
+            Organisation.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.#ctor(System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.DomainObjects.Organisations.Organisation"/> class.
+            </summary>
+            <param name="id">Organisation Id.</param>
+            <param name="shortName">Short Name.</param>
+            <param name="mediumName">Medium Name.</param>
+            <param name="longName">Long Name.</param>
+            <param name="code">Code.</param>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.ShortName">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.MediumName">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.LongName">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.Organisations.Organisation.Code">
+            <inheritdoc/>
+        </member>
+        <member name="T:VirtualBridge.Domain.Exceptions.ValidationResultException">
+            <summary>
+            ValidationException.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Exceptions.ValidationResultException.#ctor(System.ComponentModel.DataAnnotations.ValidationResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.Exceptions.ValidationResultException"/> class.
+            </summary>
+            <param name="result">Validation result.</param>
+        </member>
+        <member name="M:VirtualBridge.Domain.Exceptions.ValidationResultException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.Exceptions.ValidationResultException"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Exceptions.ValidationResultException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.Exceptions.ValidationResultException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:VirtualBridge.Domain.Exceptions.ValidationResultException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.Exceptions.ValidationResultException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:VirtualBridge.Domain.Exceptions.ValidationResultException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.Exceptions.ValidationResultException"/> class.
+            </summary>
+            <param name="info">Serialization Info.</param>
+            <param name="context">Streaming Context.</param>
+        </member>
+        <member name="T:VirtualBridge.Domain.ValidationAttributes.ValidIdAttribute">
+            <summary>
+            Validate Id.
+            </summary>
+            <seealso cref="T:System.ComponentModel.DataAnnotations.ValidationAttribute" />
+        </member>
+        <member name="M:VirtualBridge.Domain.ValidationAttributes.ValidIdAttribute.IsValid(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Domain.ValidationAttributes.ValidIdAttribute.FormatErrorMessage(System.String)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
