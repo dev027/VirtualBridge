@@ -171,7 +171,7 @@ namespace VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttribut
         /// Tests that a non-timeSpan is invalid.
         /// </summary>
         [TestMethod]
-        public void TestNonTimeSpanIsInvalidId()
+        public void TestNonTimeSpanIsInvalid()
         {
             // ARRANGE
             DateTime paramTimeOfDay = DateTime.Today;

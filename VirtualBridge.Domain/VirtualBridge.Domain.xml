@@ -395,18 +395,6 @@
             <param name="info">Serialization Info.</param>
             <param name="context">Streaming Context.</param>
         </member>
-        <member name="T:VirtualBridge.Domain.Extensions.DateTimes.DateTimeExtensions">
-            <summary>
-            <see cref="T:System.DateTime"/> extension methods.
-            </summary>
-        </member>
-        <member name="M:VirtualBridge.Domain.Extensions.DateTimes.DateTimeExtensions.ToTimePeriod(System.DateTime)">
-            <summary>
-            Converts a <see cref="T:System.DateTime"/> to <see cref="T:VirtualBridge.Domain.Constants.ETimePeriod"/>.
-            </summary>
-            <param name="dateTime">The date.</param>
-            <returns>Time Period.</returns>
-        </member>
         <member name="T:VirtualBridge.Domain.Extensions.TimeSpans.TimeSpanExtensions">
             <summary>
             <see cref="T:System.TimeSpan"/> extension methods.

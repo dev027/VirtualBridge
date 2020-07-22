@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.Extensions.TimeSpans;
@@ -33,16 +34,14 @@ namespace VirtualBridge.Domain.ValidationAttributes
         /// <param name="value">The value to validate.</param>
         /// <param name="validationContext">The context information about the validation operation.</param>
         /// <returns>
-        /// An instance of the <see cref="System.ComponentModel.DataAnnotations.ValidationResult"></see> class.
+        /// An instance of the <see cref="ValidationResult"></see> class.
         /// </returns>
         /// <exception cref="ArgumentException">Time of Day property not found.</exception>
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        [SuppressMessage("Microsoft.Design", "CA1062", Justification = "validationContext is always null")]
+        protected override ValidationResult IsValid(
+            object value,
+            ValidationContext validationContext)
         {
-            if (validationContext == null)
-            {
-                throw new ArgumentNullException(nameof(validationContext));
-            }
-
             PropertyInfo timeOfDayProperty = validationContext.ObjectType.GetProperty(this.timeOfDayPropertyName);
 
             if (timeOfDayProperty == null)

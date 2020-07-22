@@ -290,9 +290,46 @@
             Tests that a time with milliseconds is invalid.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestNonTimeSpanIsInvalidId">
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimeOfDayAttributeTests.IsValidTests.TestNonTimeSpanIsInvalid">
             <summary>
             Tests that a non-timeSpan is invalid.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Domain.ValidationAttributes.ValidTimeOfDayAttribute.IsValid(System.Object)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests.TestUnknownTimeOfDayPropertyThrowsException">
+            <summary>
+            Tests that an unknown time of day property throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests.TestNullTimeOfDayPropertyIsValid(VirtualBridge.Domain.Constants.ETimePeriod)">
+            <summary>
+            Tests that when time of day property is null then it is always valid.
+            </summary>
+            <param name="timePeriod">The time period.</param>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests.TestInvalidTimeOfDayPropertyIsValid(VirtualBridge.Domain.Constants.ETimePeriod)">
+            <summary>
+            Tests that when time of day property is invalid then it is always valid.
+            </summary>
+            <param name="timePeriod">The time period.</param>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests.TestMorningTimeWithAfternoonTimePeriodIsInvalid">
+            <summary>
+            Tests that a morning time with afternoon time period is invalid.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests.TestNonETimePeriodIsInvalid">
+            <summary>
+            Tests that a non-ETimePeriod is invalid.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.Tests.ValidationAttributes.ValidTimePeriodAttributeTests.IsValidTests.TestClass.TimeOfDay">
+            <summary>
+            Gets the Time of Day.
             </summary>
         </member>
     </members>
