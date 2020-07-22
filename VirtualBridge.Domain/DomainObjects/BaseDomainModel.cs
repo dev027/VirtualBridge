@@ -21,13 +21,16 @@ namespace VirtualBridge.Domain.DomainObjects
         /// <param name="model">The model.</param>
         protected static void Validate(BaseDomainModel model)
         {
-            var context = new ValidationContext(model, null, null);
-            var results = new List<ValidationResult>();
-            var isValid = Validator.TryValidateObject(
-                model,
-                context,
-                results,
-                true);
+            ValidationContext context = new ValidationContext(
+                instance: model,
+                serviceProvider: null,
+                items: null);
+            IList<ValidationResult> results = new List<ValidationResult>();
+            bool isValid = Validator.TryValidateObject(
+                instance: model,
+                validationContext: context,
+                validationResults: results,
+                validateAllProperties: true);
 
             if (isValid)
             {

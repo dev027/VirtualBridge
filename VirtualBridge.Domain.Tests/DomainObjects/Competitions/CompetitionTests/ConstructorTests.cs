@@ -4,6 +4,7 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Competitions;
 using VirtualBridge.Domain.DomainObjects.Organisations;
 using VirtualBridge.Domain.DomainObjects.RegularCompetitions;
@@ -38,6 +39,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -46,7 +48,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: paramDescription,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         #endregion Property: Id
@@ -71,6 +74,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -79,7 +83,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: paramDescription,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -108,7 +114,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: paramDescription,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         /// <summary>
@@ -130,6 +137,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -138,7 +146,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: paramDescription,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         #endregion Property: Name
@@ -163,6 +172,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -171,7 +181,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: null!,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         /// <summary>
@@ -192,6 +203,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -200,7 +212,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: string.Empty,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         /// <summary>
@@ -222,6 +235,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 code: "LCBA");
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -230,7 +244,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: paramDescription,
                 organisation: paramOrganisation,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         #endregion Property: Description
@@ -250,6 +265,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const string paramDescription = "Fortnightly MP Pairs";
             const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
             TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
             _ = new RegularCompetition(
@@ -258,7 +274,8 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
                 description: paramDescription,
                 organisation: null!,
                 dayOfWeek: paramDayOfWeek,
-                timeOfDay: paramTimeOfDay);
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
         }
 
         #endregion Property: Organisation

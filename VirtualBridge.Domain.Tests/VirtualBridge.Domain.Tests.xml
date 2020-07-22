@@ -212,7 +212,12 @@
         </member>
         <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestInvalidTimeOfDayThrowsException">
             <summary>
-            Tests that an invalid of day throws exception.
+            Tests that an invalid time of day throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestInvalidTimePeriodThrowsException">
+            <summary>
+            Tests that an invalid time period throws exception.
             </summary>
         </member>
         <member name="T:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests">

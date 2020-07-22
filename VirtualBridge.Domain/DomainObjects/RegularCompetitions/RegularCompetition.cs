@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Competitions;
 using VirtualBridge.Domain.DomainObjects.Organisations;
 using VirtualBridge.Domain.ValidationAttributes;
@@ -26,13 +27,15 @@ namespace VirtualBridge.Domain.DomainObjects.RegularCompetitions
         /// <param name="organisation">Organisation.</param>
         /// <param name="dayOfWeek">Day of the Week.</param>
         /// <param name="timeOfDay">Time of the Day.</param>
+        /// <param name="timePeriod">Time Period.</param>
         public RegularCompetition(
             Guid id,
             string name,
             string description,
             IOrganisation organisation,
             DayOfWeek dayOfWeek,
-            TimeSpan timeOfDay)
+            TimeSpan timeOfDay,
+            ETimePeriod timePeriod)
             : base(
                 id: id,
                 name: name,
@@ -41,6 +44,7 @@ namespace VirtualBridge.Domain.DomainObjects.RegularCompetitions
         {
             this.DayOfWeek = dayOfWeek;
             this.TimeOfDay = timeOfDay;
+            this.TimePeriod = timePeriod;
 
             Validate(this);
         }
@@ -52,5 +56,9 @@ namespace VirtualBridge.Domain.DomainObjects.RegularCompetitions
         [Required]
         [ValidTimeOfDay]
         public TimeSpan TimeOfDay { get; }
+
+        /// <inheritdoc/>
+        [ValidTimePeriod(nameof(TimeOfDay))]
+        public ETimePeriod TimePeriod { get; }
     }
 }

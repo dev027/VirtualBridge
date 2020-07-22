@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Competitions;
 
 namespace VirtualBridge.Domain.DomainObjects.RegularCompetitions
@@ -22,5 +23,10 @@ namespace VirtualBridge.Domain.DomainObjects.RegularCompetitions
         /// Gets the Time of day.
         /// </summary>
         TimeSpan TimeOfDay { get; }
+
+        /// <summary>
+        /// Gets the Time Period.
+        /// </summary>
+        ETimePeriod TimePeriod { get; }
     }
 }
