@@ -41,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DomainObjects\AuditDetails\" />
     <Folder Include="DomainObjects\Sessions\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>

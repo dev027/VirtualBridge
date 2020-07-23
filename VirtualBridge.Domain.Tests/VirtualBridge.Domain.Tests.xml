@@ -4,6 +4,46 @@
         <name>VirtualBridge.Domain.Tests</name>
     </assembly>
     <members>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestFullConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestShortConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestEmptyAuditHeaderIdThrowsException">
+            <summary>
+            Tests that an empty audit header id throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestNullUsernameThrowsException">
+            <summary>
+            Tests that a null username throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestEmptyUsernameThrowsException">
+            <summary>
+            Tests that a empty username throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestLongUsernameThrowsException">
+            <summary>
+            Tests that a long username throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests.TestEmptyCorrelationIdThrowsException">
+            <summary>
+            Tests that an empty correlation id throws exception.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests">
             <summary>
             Tests for <see cref="M:VirtualBridge.Domain.DomainObjects.BaseDomainModel.Validate(VirtualBridge.Domain.DomainObjects.BaseDomainModel)"/>.
