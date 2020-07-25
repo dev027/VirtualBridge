@@ -4,5 +4,65 @@
         <name>VirtualBridge.Data.Tests</name>
     </assembly>
     <members>
+        <member name="T:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests">
+            <summary>
+            Test the <see cref="M:VirtualBridge.Data.DbContexts.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)"/> method.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests.Test_With_PreConfiguration_Options">
+            <summary>
+            Test that <see cref="M:VirtualBridge.Data.DbContexts.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)"/> works with pre-configuration options.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests.Test_When_Called_With_Null_Options_Throw_Exceptions">
+            <summary>
+            Test that <see cref="M:VirtualBridge.Data.DbContexts.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)"/> throws exception with null options.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests.DataContextWrapper">
+            <summary>
+            Test Wrapper for DataContext so we can access the <see cref="M:VirtualBridge.Data.DbContexts.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)"/>.
+            </summary>
+            <seealso cref="T:VirtualBridge.Data.DbContexts.DataContext" />
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests.DataContextWrapper.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{VirtualBridge.Data.DbContexts.DataContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests.DataContextWrapper"/> class.
+            </summary>
+            <param name="options">DbContext Options.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.DbContexts.DataContextTests.OnModelCreatingTests.DataContextWrapper.TestOnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Tests the protected <see cref="M:VirtualBridge.Data.DbContexts.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)"/> method.
+            </summary>
+            <param name="modelBuilder">Model Builder.</param>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.TestUtilities.TestUtils">
+            <summary>
+            Test Utilities.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Tests.TestUtilities.TestUtils.ConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptions">
+            <summary>
+            Gets the database context options.
+            </summary>
+            <value>
+            The database context options.
+            </value>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.SetPrivatePropertyValue``1(System.Object,System.String,``0)">
+            <summary>
+            Sets the private property value.
+            </summary>
+            <typeparam name="T">Property Type.</typeparam>
+            <param name="target">Target object.</param>
+            <param name="propName">Property name.</param>
+            <param name="value">Value to set.</param>
+        </member>
     </members>
 </doc>

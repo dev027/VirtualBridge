@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualBridge.Migration</name>
+    </assembly>
+    <members>
+        <member name="T:VirtualBridge.Migration.DbContexts.MigrationContext">
+            <summary>
+            Migration Context.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+        </member>
+        <member name="M:VirtualBridge.Migration.DbContexts.MigrationContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Migration.DbContexts.MigrationContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Override this method to further configure the model that was discovered by convention from the entity types
+            exposed in dbset properties on your derived context. The resulting model may be cached
+            and re-used for subsequent instances of your derived context.
+            </summary>
+            <param name="modelBuilder">The builder being used to construct the model for this context. Databases (and other extensions) typically
+            define extension methods on this object that allow you to configure aspects of the model that are specific
+            to a given database.</param>
+            <exception cref="T:System.ArgumentNullException">modelBuilder.</exception>
+            <remarks>
+            If a model is explicitly set on the options for this context" />)
+            then this method will not be run.
+            </remarks>
+        </member>
+        <member name="T:VirtualBridge.Migration.Migrations.Init">
+            <summary>
+            Initial.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.Migrations.Migration" />
+        </member>
+        <member name="M:VirtualBridge.Migration.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Migration.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Migration.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Implemented to builds the <see cref="P:Microsoft.EntityFrameworkCore.Migrations.Migration.TargetModel" />.
+            </summary>
+            <param name="modelBuilder">The <see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder" /> to use to build the model.</param>
+        </member>
+        <member name="T:VirtualBridge.Migration.Program">
+            <summary>
+            Migrations.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Migration.Program.Main">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+        </member>
+    </members>
+</doc>

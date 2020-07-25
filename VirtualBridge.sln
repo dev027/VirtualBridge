@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualBridge.Data", "Virtu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBridge.Data.Tests", "VirtualBridge.Data.Tests\VirtualBridge.Data.Tests.csproj", "{6DDA5F3C-BDA4-40E5-B5E5-7FA19C9DADF7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 Migration", "09 Migration", "{8039AE56-9782-4732-A6DC-705609BEEEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBridge.Migration", "VirtualBridge.Migration\VirtualBridge.Migration.csproj", "{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,14 @@ Global
 		{6DDA5F3C-BDA4-40E5-B5E5-7FA19C9DADF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DDA5F3C-BDA4-40E5-B5E5-7FA19C9DADF7}.Release|x64.ActiveCfg = Release|Any CPU
 		{6DDA5F3C-BDA4-40E5-B5E5-7FA19C9DADF7}.Release|x64.Build.0 = Release|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Debug|x64.Build.0 = Debug|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Release|x64.ActiveCfg = Release|Any CPU
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +100,7 @@ Global
 		{174D8379-1139-42F0-B6DB-84A460492C28} = {9D46B443-9117-4269-8556-237A5A8A67D8}
 		{6838FEB2-A557-4E5F-B94C-8126AD71F8DE} = {7E1F364F-355B-4108-86AD-561DDF1FBBD9}
 		{6DDA5F3C-BDA4-40E5-B5E5-7FA19C9DADF7} = {7E1F364F-355B-4108-86AD-561DDF1FBBD9}
+		{00E8815A-D8BD-46E0-B7C0-B70F87C64BFD} = {8039AE56-9782-4732-A6DC-705609BEEEC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAF22097-CD6D-4280-8516-E73571517831}
