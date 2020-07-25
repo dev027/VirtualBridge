@@ -4,6 +4,96 @@
         <name>VirtualBridge.Domain.Tests</name>
     </assembly>
     <members>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestWithValidValues">
+            <summary>
+            Tests with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestWithValidValuesThatAreNull">
+            <summary>
+            Tests the with valid values that are null.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestEmptyAuditDetailIdThrowsException">
+            <summary>
+            Tests that empty audit detail id throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestNullAuditHeaderThrowsException">
+            <summary>
+            Tests that null audit header throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestNullTableNameThrowsException">
+            <summary>
+            Tests that null table name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestEmptyTableNameThrowsException">
+            <summary>
+            Tests that empty table name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestLongTableNameThrowsException">
+            <summary>
+            Tests that long table name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestNullColumnNameThrowsException">
+            <summary>
+            Tests that null column name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestEmptyColumnNameThrowsException">
+            <summary>
+            Tests that empty column name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestLongColumnNameThrowsException">
+            <summary>
+            Tests that long column name throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.ConstructorTests.TestEmptyRecordIdThrowsException">
+            <summary>
+            Tests that empty record id throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.CreateForCreateTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.CreateForCreate(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.String,System.Guid,System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.CreateForCreateTests.TestWithValidValues">
+            <summary>
+            Tests with valid values.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.CreateForDeleteTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.CreateForDelete(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.Guid)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.CreateForDeleteTests.TestWithValidValues">
+            <summary>
+            Tests with valid values.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.CreateForUpdateTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.CreateForUpdate(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.String,System.Guid,System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditDetails.AuditDetailsTests.CreateForUpdateTests.TestWithValidValues">
+            <summary>
+            Tests with valid values.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderTests.ConstructorTests">
             <summary>
             Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader"/>.
@@ -259,6 +349,17 @@
             <summary>
             Tests that an invalid time period throws exception.
             </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.Tests.TestUtilities.Create">
+            <summary>
+            Create domain objects for tests.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.TestUtilities.Create.AuditHeader">
+            <summary>
+            Creates an <see cref="T:VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader"/>.
+            </summary>
+            <returns>Audit Header.</returns>
         </member>
         <member name="T:VirtualBridge.Domain.Tests.ValidationAttributes.ValidIdAttributeTests.IsValidTests">
             <summary>

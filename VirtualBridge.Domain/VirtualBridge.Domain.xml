@@ -14,6 +14,26 @@
             Organisation Maintenance
             </summary>
         </member>
+        <member name="T:VirtualBridge.Domain.Constants.EDatabaseAction">
+            <summary>
+            Database Action.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.Constants.EDatabaseAction.Create">
+            <summary>
+            Create
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.Constants.EDatabaseAction.Update">
+            <summary>
+            Update
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.Constants.EDatabaseAction.Delete">
+            <summary>
+            Delete
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.Constants.ETimePeriod">
             <summary>
             Time Period.
@@ -32,6 +52,156 @@
         <member name="F:VirtualBridge.Domain.Constants.ETimePeriod.Evening">
             <summary>
             The evening
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail">
+            <summary>
+            Audit Detail.
+            </summary>
+            <seealso cref="T:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail" />
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.#ctor(System.Guid,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.String,System.Guid,System.String,System.String,VirtualBridge.Domain.Constants.EDatabaseAction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail"/> class.
+            </summary>
+            <param name="id">Audit Detail Id.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="tableName">Table Name.</param>
+            <param name="columnName">Column Name.</param>
+            <param name="recordId">Record Id.</param>
+            <param name="oldValue">Old Value.</param>
+            <param name="newValue">New Value.</param>
+            <param name="databaseAction">Database Action.</param>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.TableName">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.ColumnName">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.RecordId">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.OldValue">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.NewValue">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.DatabaseAction">
+            <inheritdoc/>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.AuditHeader">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.CreateForCreate(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.String,System.Guid,System.String)">
+            <summary>
+            Factory method for creating for Create event.
+            </summary>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="tableName">Table Name.</param>
+            <param name="columnName">Column Name.</param>
+            <param name="recordId">Record Id.</param>
+            <param name="newValue">The new value.</param>
+            <returns>Audit Detail.</returns>
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.CreateForUpdate(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.String,System.Guid,System.String,System.String)">
+            <summary>
+            Factory method for creating for Update event.
+            </summary>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="tableName">Table Name.</param>
+            <param name="columnName">Column Name.</param>
+            <param name="recordId">Record Id.</param>
+            <param name="oldValue">Old Value.</param>
+            <param name="newValue">New Value.</param>
+            <returns>Audit Detail.</returns>
+        </member>
+        <member name="M:VirtualBridge.Domain.DomainObjects.AuditDetails.AuditDetail.CreateForDelete(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeader,System.String,System.Guid)">
+            <summary>
+            Factory method for creating for Delete event.
+            </summary>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="tableName">Table Name.</param>
+            <param name="recordId">Record Id.</param>
+            <returns>Audit Detail.</returns>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail">
+            <summary>
+            Audit Detail.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.Id">
+            <summary>
+            Gets the Audit Detail Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.TableName">
+            <summary>
+            Gets the Table Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.ColumnName">
+            <summary>
+            Gets the Column Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.RecordId">
+            <summary>
+            Gets the Record Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.OldValue">
+            <summary>
+            Gets the Old Value.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.NewValue">
+            <summary>
+            Gets the New Value.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.DatabaseAction">
+            <summary>
+            Gets the Database Action.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.AuditHeader">
+            <summary>
+            Gets the Audit Header.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.AuditDetails.Metadata.ColumnName">
+            <summary>
+            Metadata for the <see cref="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.ColumnName"></see> property.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.AuditDetails.Metadata.ColumnName.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.AuditDetails.Metadata.ColumnName.MaxLength">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Domain.DomainObjects.AuditDetails.Metadata.TableName">
+            <summary>
+            Metadata for the <see cref="P:VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail.TableName"></see> property.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.AuditDetails.Metadata.TableName.MinLength">
+            <summary>
+            The minimum length.
+            </summary>
+        </member>
+        <member name="F:VirtualBridge.Domain.DomainObjects.AuditDetails.Metadata.TableName.MaxLength">
+            <summary>
+            The maximum length.
             </summary>
         </member>
         <member name="T:VirtualBridge.Domain.DomainObjects.AuditHeaders.AuditHeader">

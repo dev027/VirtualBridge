@@ -1,29 +1,31 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Copyright>Copyright (c) Do It Wright. All rights reserved.</Copyright>
     <Company>Do It Wright</Company>
     <Authors>Steve Wright</Authors>
     <Product>Virtual Bridge</Product>
-    <Description>Domain for Virtual Bridge.</Description>
+    <Description>Data access layer for Virtual Bridge.</Description>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup>
     <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup>
     <CodeAnalysisRuleSet>C:\Users\Steve\Documents\Visual Studio 2019\DoItWright.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <DocumentationFile>VirtualBridge.Domain.xml</DocumentationFile>
-    <Nullable>enable</Nullable>
+    <DocumentationFile>VirtualBridge.Data.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.6.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -33,7 +35,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DomainObjects\Sessions\" />
-    <Folder Include="ValueObjects\" />
+    <ProjectReference Include="..\VirtualBridge.Domain\VirtualBridge.Domain.csproj" />
+    <ProjectReference Include="..\VirtualBridge.Utilities\VirtualBridge.Utilities.csproj" />
   </ItemGroup>
+
 </Project>
