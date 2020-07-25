@@ -134,6 +134,21 @@
             Tests that an empty correlation id throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderWithAuditDetailsTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderWithAuditDetailsTests.ConstructorTests.TestFullConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.AuditHeaders.AuditHeaderWithAuditDetailsTests.ConstructorTests.TestShortConstructorWithValidValues">
+            <summary>
+            Tests the constructor with valid values.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Domain.Tests.DomainObjects.BaseDomainModelTests.ValidateTests">
             <summary>
             Tests for <see cref="M:VirtualBridge.Domain.DomainObjects.BaseDomainModel.Validate(VirtualBridge.Domain.DomainObjects.BaseDomainModel)"/>.

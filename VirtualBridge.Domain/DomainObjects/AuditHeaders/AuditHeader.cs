@@ -36,7 +36,10 @@ namespace VirtualBridge.Domain.DomainObjects.AuditHeaders
             this.Username = username;
             this.CorrelationId = correlationId;
 
-            Validate(this);
+            if (this.GetType() == typeof(AuditHeader))
+            {
+                Validate(this);
+            }
         }
 
         /// <summary>
@@ -56,7 +59,10 @@ namespace VirtualBridge.Domain.DomainObjects.AuditHeaders
             this.Username = username;
             this.CorrelationId = correlationId;
 
-            Validate(this);
+            if (this.GetType() == typeof(AuditHeader))
+            {
+                Validate(this);
+            }
         }
 
         /// <summary>
