@@ -30,7 +30,7 @@ namespace VirtualBridge.Migration.DbContexts
             }
 
             const string connectionString = "data source=WRIGHT1\\SQLEXPRESS01;" +
-                                            "initial catalog=Agenda;" +
+                                            "initial catalog=VirtualBridge;" +
                                             "Integrated Security=True";
 
             optionsBuilder.UseSqlServer(connectionString);

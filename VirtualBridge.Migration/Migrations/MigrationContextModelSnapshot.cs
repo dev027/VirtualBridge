@@ -7,8 +7,9 @@ using VirtualBridge.Migration.DbContexts;
 
 namespace VirtualBridge.Migration.Migrations
 {
+    
     [DbContext(typeof(MigrationContext))]
-    class MigrationContextModelSnapshot : ModelSnapshot
+    internal class MigrationContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -212,6 +213,37 @@ namespace VirtualBridge.Migration.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("VirtualBridge.Data.Dtos.OrganisationDto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("LongName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("MediumName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Organisations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -4,13 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VirtualBridge.Migration.DbContexts;
 
 namespace VirtualBridge.Migration.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    [Migration("20200725191741_Init")]
-    partial class Init
+    [Migration("20200727223346_AddOrganisations")]
+    partial class AddOrganisations
     {
         /// <summary>
         /// Implemented to builds the <see cref="P:Microsoft.EntityFrameworkCore.Migrations.Migration.TargetModel" />.
@@ -218,6 +219,37 @@ namespace VirtualBridge.Migration.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("VirtualBridge.Data.Dtos.OrganisationDto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("LongName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("MediumName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Organisations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

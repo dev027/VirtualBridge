@@ -37,6 +37,56 @@
             </summary>
             <param name="modelBuilder">Model Builder.</param>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:VirtualBridge.Data.Dtos.OrganisationDto" />.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ConstructorTests.Test_Default_Constructor">
+            <summary>
+            Tests the default constructor.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ReadDatabaseTests">
+            <summary>
+            Read database tests.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ReadDatabaseTests.Test_Read_From_Database">
+            <summary>
+            Tests the read from database.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ToDomainTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.OrganisationDto.ToDomain"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ToDomainTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests passing valid values.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ToDtoTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.OrganisationDto.ToDto(VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ToDtoTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests method with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ToDtoTests.Test_Passing_Null_Organisation_Throws_Exception">
+            <summary>
+            Tests passing null Organisation throws exception.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.TestUtilities.TestUtils">
             <summary>
             Test Utilities.

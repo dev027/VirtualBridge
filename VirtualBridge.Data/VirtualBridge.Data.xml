@@ -9,6 +9,10 @@
             Database Context.
             </summary>
             <seealso cref="T:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext" />
+            <summary>
+            Database Context - DB Sets.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
         </member>
         <member name="M:VirtualBridge.Data.DbContexts.DataContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
             <summary>
@@ -30,6 +34,74 @@
             If a model is explicitly set on the options for this context" />)
             then this method will not be run.
             </remarks>
+        </member>
+        <member name="P:VirtualBridge.Data.DbContexts.DataContext.Organisations">
+            <summary>
+            Gets or sets the Organisations.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Dtos.BaseDto">
+            <summary>
+            Base model for DTOs.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Dtos.OrganisationDto">
+            <summary>
+            Organisation DTO.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.OrganisationDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.OrganisationDto"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.OrganisationDto.#ctor(System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.OrganisationDto"/> class.
+            </summary>
+            <param name="id">Organisation Id.</param>
+            <param name="shortName">Short Name.</param>
+            <param name="mediumName">Medium Name.</param>
+            <param name="longName">Long Name.</param>
+            <param name="code">Code.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.OrganisationDto.Id">
+            <summary>
+            Gets the Organisation Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.OrganisationDto.ShortName">
+            <summary>
+            Gets the Short Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.OrganisationDto.MediumName">
+            <summary>
+            Gets the Medium Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.OrganisationDto.LongName">
+            <summary>
+            Gets the Long Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.OrganisationDto.Code">
+            <summary>
+            Gets the Code.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.OrganisationDto.ToDto(VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="organisation">Organisation.</param>
+            <returns>Organisation DTO.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.OrganisationDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Organisation.</returns>
         </member>
     </members>
 </doc>
