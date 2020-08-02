@@ -207,6 +207,17 @@
             Tests passing null Organisation throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.Repositories.AuditHeaderRepositoryTests.CreateAsyncTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Repositories.AuditHeaders.IAuditHeaderRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Repositories.AuditHeaderRepositoryTests.CreateAsyncTests.Test_With_Valid_Values">
+            <summary>
+            Tests with valid values.
+            </summary>
+            <returns>Nothing.</returns>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.TestUtilities.Create">
             <summary>
             Create DTOs for tests.
@@ -239,6 +250,14 @@
             <summary>
             Gets the database context options.
             </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory(System.String,System.String)">
+            <summary>
+            Gets the database context options for In Memory database.
+            </summary>
+            <param name="testClassName">Test Class Name.</param>
+            <param name="testName">Test Name.</param>
+            <returns>Database options.</returns>
         </member>
         <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory(System.String)">
             <summary>
