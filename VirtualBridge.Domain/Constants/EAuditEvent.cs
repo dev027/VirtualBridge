@@ -9,6 +9,11 @@ namespace VirtualBridge.Domain.Constants
     public enum EAuditEvent
     {
         /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = 0,
+
+        /// <summary>
         /// Organisation Maintenance
         /// </summary>
         OrganisationMaintenance = 1,

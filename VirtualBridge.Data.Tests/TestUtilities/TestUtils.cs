@@ -24,9 +24,6 @@ namespace VirtualBridge.Data.Tests.TestUtilities
         /// <summary>
         /// Gets the database context options.
         /// </summary>
-        /// <value>
-        /// The database context options.
-        /// </value>
         public static DbContextOptions<DataContext> DbContextOptions
         {
             get
@@ -35,6 +32,24 @@ namespace VirtualBridge.Data.Tests.TestUtilities
                 builder.UseSqlServer(TestUtils.ConnectionString);
                 return builder.Options;
             }
+        }
+
+        /// <summary>
+        /// Gets the database context options for In Memory database.
+        /// </summary>
+        /// <param name="testDatabaseName">Test Database Name.</param>
+        /// <returns>Database options.</returns>
+        public static DbContextOptions<DataContext> DbContextOptionsInMemory(
+            string testDatabaseName)
+        {
+            if (testDatabaseName == null)
+            {
+                throw new ArgumentNullException(nameof(testDatabaseName));
+            }
+
+            DbContextOptionsBuilder<DataContext> builder = new DbContextOptionsBuilder<DataContext>();
+            builder.UseInMemoryDatabase(testDatabaseName);
+            return builder.Options;
         }
 
         /// <summary>
@@ -61,7 +76,7 @@ namespace VirtualBridge.Data.Tests.TestUtilities
                     nameof(propName),
                     string.Format(
                         CultureInfo.InvariantCulture,
-                        "Property {0} was not found in type {1}",
+                        @"Property {0} was not found in type {1}",
                         propName,
                         target.GetType().FullName));
             }

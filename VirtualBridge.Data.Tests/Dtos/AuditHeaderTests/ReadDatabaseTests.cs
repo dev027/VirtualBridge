@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VirtualBridge.Data.DbContexts;
 using VirtualBridge.Data.Tests.TestUtilities;
 
-namespace VirtualBridge.Data.Tests.Dtos.OrganisationTests
+namespace VirtualBridge.Data.Tests.Dtos.AuditHeaderTests
 {
     /// <summary>
     /// Read database tests.
@@ -24,8 +24,8 @@ namespace VirtualBridge.Data.Tests.Dtos.OrganisationTests
             using DataContext context = new DataContext(
                 TestUtils.DbContextOptionsInMemory(nameof(ReadDatabaseTests)));
 
-            _ = context.Organisations.Any();
-            _ = context.Organisations.FirstOrDefault();
+            _ = context.AuditHeaders.Any();
+            _ = context.AuditHeaders.FirstOrDefault();
         }
     }
 }

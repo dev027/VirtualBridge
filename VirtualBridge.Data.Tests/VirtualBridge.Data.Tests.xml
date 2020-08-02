@@ -37,6 +37,126 @@
             </summary>
             <param name="modelBuilder">Model Builder.</param>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:VirtualBridge.Data.Dtos.AuditHeaderDto" />.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ConstructorTests.Test_Default_Constructor">
+            <summary>
+            Tests the default constructor.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ConstructorTests.Test_Full_Constructor">
+            <summary>
+            Tests the full constructor.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ReadDatabaseTests">
+            <summary>
+            Read database tests.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ReadDatabaseTests.Test_Read_From_Database">
+            <summary>
+            Tests the read from database.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ToDomainTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.AuditDetailDto.ToDomain" />.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ToDomainTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests passing valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ToDomainTests.Test_With_Null_AuditHeader_Throws_Exception">
+            <summary>
+            Tests with null audit header throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ToDtoTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.OrganisationDto.ToDto(VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ToDtoTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests method with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditDetailTests.ToDtoTests.Test_Passing_Null_AuditDetail_Throws_Exception">
+            <summary>
+            Tests passing null Audit Header throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ConstructorTests">
+            <summary>
+            Test constructor for <see cref="T:VirtualBridge.Data.Dtos.AuditHeaderDto" />.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ConstructorTests.Test_Default_Constructor">
+            <summary>
+            Tests the default constructor.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ConstructorTests.Test_Basic_Constructor">
+            <summary>
+            Tests the basic constructor.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ReadDatabaseTests">
+            <summary>
+            Read database tests.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ReadDatabaseTests.Test_Read_From_Database">
+            <summary>
+            Tests the read from database.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDomainTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.AuditHeaderDto.ToDomain"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDomainTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests passing valid values.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDomainWithAuditDetailsTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.AuditHeaderDto.ToDomainWithAuditDetails"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDomainWithAuditDetailsTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests passing valid values.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDtoWithAuditDetailsTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Dtos.AuditHeaderDto.ToDtoWithAuditDetails(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDtoWithAuditDetailsTests.Test_Passing_Valid_Values">
+            <summary>
+            Tests method with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Dtos.AuditHeaderTests.ToDtoWithAuditDetailsTests.Test_Passing_Null_AuditHeader_Throws_Exception">
+            <summary>
+            Tests passing null AuditHeader throws exception.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.Dtos.OrganisationTests.ConstructorTests">
             <summary>
             Test constructor for <see cref="T:VirtualBridge.Data.Dtos.OrganisationDto" />.
@@ -87,6 +207,24 @@
             Tests passing null Organisation throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.TestUtilities.Create">
+            <summary>
+            Create DTOs for tests.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.Create.AuditHeader">
+            <summary>
+            Creates an <see cref="T:VirtualBridge.Data.Dtos.AuditHeaderDto"/>.
+            </summary>
+            <returns>Audit Header.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.Create.AuditDetail(VirtualBridge.Data.Dtos.AuditHeaderDto)">
+            <summary>
+            Audits the detail.
+            </summary>
+            <param name="auditHeader">The audit header.</param>
+            <returns>Audit Detail.</returns>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.TestUtilities.TestUtils">
             <summary>
             Test Utilities.
@@ -101,9 +239,13 @@
             <summary>
             Gets the database context options.
             </summary>
-            <value>
-            The database context options.
-            </value>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory(System.String)">
+            <summary>
+            Gets the database context options for In Memory database.
+            </summary>
+            <param name="testDatabaseName">Test Database Name.</param>
+            <returns>Database options.</returns>
         </member>
         <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.SetPrivatePropertyValue``1(System.Object,System.String,``0)">
             <summary>

@@ -9,6 +9,11 @@
             Audit Events.
             </summary>
         </member>
+        <member name="F:VirtualBridge.Domain.Constants.EAuditEvent.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
         <member name="F:VirtualBridge.Domain.Constants.EAuditEvent.OrganisationMaintenance">
             <summary>
             Organisation Maintenance

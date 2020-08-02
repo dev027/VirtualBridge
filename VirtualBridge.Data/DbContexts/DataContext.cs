@@ -47,6 +47,15 @@ namespace VirtualBridge.Data.DbContexts
 
             base.OnModelCreating(modelBuilder);
 
+            DisableCascadeDeletes(modelBuilder);
+        }
+
+        /// <summary>
+        /// Disable the cascade deletes on all tables.
+        /// </summary>
+        /// <param name="modelBuilder">The model builder.</param>
+        private static void DisableCascadeDeletes(ModelBuilder modelBuilder)
+        {
             foreach (IMutableForeignKey foreignKey in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;

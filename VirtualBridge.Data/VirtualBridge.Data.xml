@@ -35,10 +35,191 @@
             then this method will not be run.
             </remarks>
         </member>
+        <member name="M:VirtualBridge.Data.DbContexts.DataContext.DisableCascadeDeletes(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Disable the cascade deletes on all tables.
+            </summary>
+            <param name="modelBuilder">The model builder.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.DbContexts.DataContext.AuditHeaders">
+            <summary>
+            Gets or sets the Audit Headers.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.DbContexts.DataContext.AuditDetails">
+            <summary>
+            Gets or sets the Audit Details.
+            </summary>
+        </member>
         <member name="P:VirtualBridge.Data.DbContexts.DataContext.Organisations">
             <summary>
             Gets or sets the Organisations.
             </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Dtos.AuditDetailDto">
+            <summary>
+            Audit Details DTO.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditDetailDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.AuditDetailDto"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditDetailDto.#ctor(System.Guid,System.Guid,System.String,System.String,System.Guid,System.String,System.String,VirtualBridge.Domain.Constants.EDatabaseAction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.AuditDetailDto"/> class.
+            </summary>
+            <param name="id">Audit Detail Id.</param>
+            <param name="auditHeaderId">Audit Header Id.</param>
+            <param name="tableName">Table Name.</param>
+            <param name="columnName">Column Name.</param>
+            <param name="recordId">Record Id.</param>
+            <param name="oldValue">Old Value.</param>
+            <param name="newValue">New Value.</param>
+            <param name="databaseAction">Database Action.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditDetailDto.#ctor(System.Guid,System.Guid,System.String,System.String,System.Guid,System.String,System.String,VirtualBridge.Domain.Constants.EDatabaseAction,VirtualBridge.Data.Dtos.AuditHeaderDto)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.AuditDetailDto"/> class.
+            </summary>
+            <param name="id">Audit Detail Id.</param>
+            <param name="auditHeaderId">Audit Header Id.</param>
+            <param name="tableName">Table Name.</param>
+            <param name="columnName">Column Name.</param>
+            <param name="recordId">Record Id.</param>
+            <param name="oldValue">Old Value.</param>
+            <param name="newValue">New Value.</param>
+            <param name="databaseAction">Database Action.</param>
+            <param name="auditHeader">Audit Header.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.Id">
+            <summary>
+            Gets the Audit Detail Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.AuditHeaderId">
+            <summary>
+            Gets the Audit Header Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.TableName">
+            <summary>
+            Gets the Table Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.ColumnName">
+            <summary>
+            Gets the Column Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.RecordId">
+            <summary>
+            Gets the Record Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.OldValue">
+            <summary>
+            Gets the Old Value.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.NewValue">
+            <summary>
+            Gets the New Value.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.DatabaseAction">
+            <summary>
+            Gets the Database Action.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditDetailDto.AuditHeader">
+            <summary>
+            Gets the Audit Header.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditDetailDto.ToDto(VirtualBridge.Domain.DomainObjects.AuditDetails.IAuditDetail)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="auditDetail">Audit Detail.</param>
+            <returns>Audit Detail DTO.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditDetailDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Audit Detail.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Dtos.AuditHeaderDto">
+            <summary>
+            Audit Header DTO.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditHeaderDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.AuditHeaderDto"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditHeaderDto.#ctor(System.Guid,VirtualBridge.Domain.Constants.EAuditEvent,System.DateTime,System.String,System.Guid,System.Collections.Generic.IList{VirtualBridge.Data.Dtos.AuditDetailDto})">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.AuditHeaderDto"/> class.
+            </summary>
+            <param name="id">Audit Header Id.</param>
+            <param name="auditEvent">Audit Event.</param>
+            <param name="timeStamp">Time Stamp.</param>
+            <param name="auditDetails">Audit Details.</param>
+            <param name="username">Username.</param>
+            <param name="correlationId">Correlation Id.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditHeaderDto.Id">
+            <summary>
+            Gets Audit Header Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditHeaderDto.AuditEvent">
+            <summary>
+            Gets the Audit Event.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditHeaderDto.TimeStamp">
+            <summary>
+            Gets the Time Stamp.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditHeaderDto.Username">
+            <summary>
+            Gets the Username.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditHeaderDto.CorrelationId">
+            <summary>
+            Gets the Correlation Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.AuditHeaderDto.AuditDetails">
+            <summary>
+            Gets the Audit Details.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditHeaderDto.ToDtoWithAuditDetails(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)">
+            <summary>
+            Converts to DTO with AuditDetails.
+            </summary>
+            <param name="auditHeader">Audit Header.</param>
+            <returns>Audit Header DTO with Audit Details.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditHeaderDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Audit Header.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.AuditHeaderDto.ToDomainWithAuditDetails">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Audit Header.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Dtos.BaseDto">
             <summary>
@@ -102,6 +283,176 @@
             Converts instance to domain object.
             </summary>
             <returns>Organisation.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.IVirtualBridgeData">
+            <summary>
+            Data Access Layer - Transactions.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="P:VirtualBridge.Data.IVirtualBridgeData.AuditHeader">
+            <summary>
+            Gets the Audit Header Repository.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.IVirtualBridgeData.Organisation">
+            <summary>
+            Gets the Organisation Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.IVirtualBridgeData.BeginTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent)">
+            <summary>
+            Begins the transaction.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditEvent">Audit Event.</param>
+            <returns>Audit Header.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.IVirtualBridgeData.CommitTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)">
+            <summary>
+            Commits the transaction.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.IVirtualBridgeData.RollbackTransaction(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Rollbacks the Transaction.
+            </summary>
+            <param name="who">Who details.</param>
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.AuditHeaders.AuditHeaderRepository">
+            <summary>
+            Audit Header Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.AuditHeaders.AuditHeaderRepository.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Data.Repositories.AuditHeaders.AuditHeaderRepository},VirtualBridge.Data.DbContexts.DataContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Repositories.AuditHeaders.AuditHeaderRepository"/> class.
+            </summary>
+            <param name="logger">Logger.</param>
+            <param name="dataContext">Data context.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.AuditHeaders.AuditHeaderRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)">
+            <inheritdoc />
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.AuditHeaders.IAuditHeaderRepository">
+            <summary>
+            Audit Header Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.AuditHeaders.IAuditHeaderRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)">
+            <summary>
+            Creates the Audit Header with Audit Details.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header with Audit Details.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository">
+            <summary>
+            Organisation Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <summary>
+            Creates the Organisation.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="organisation">Organisation.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Gets all organisations.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>List of Organisations.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository.GetByIdAsync(VirtualBridge.Utilities.Models.Whos.IWho,System.Guid)">
+            <summary>
+            Gets the Organisation by Id.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="organisationId">Organisation Id.</param>
+            <returns>Organisation (Null=Not Found).</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository.HaveAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Checks if we have Organisations.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>True if Organisations exist.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository.UpdateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <summary>
+            Updates the Organisation.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="organisation">Organisation.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Resources.ExceptionResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Resources.ExceptionResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Resources.ExceptionResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Resources.ExceptionResource.CannotConvertTo___If___IsNull">
+            <summary>
+              Looks up a localized string similar to Cannot convert to {0} if {1} is null..
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.VirtualBridgeData">
+            <summary>
+            Data access layer.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.VirtualBridgeData.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Data.VirtualBridgeData},VirtualBridge.Data.DbContexts.DataContext,VirtualBridge.Data.Repositories.AuditHeaders.IAuditHeaderRepository,VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.VirtualBridgeData"/> class.
+            </summary>
+            <param name="logger">Logger.</param>
+            <param name="dataContext">Data Context.</param>
+            <param name="auditHeaderRepository">Audit Header Repository.</param>
+            <param name="organisationRepository">Organisation Repository.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.VirtualBridgeData.AuditHeader">
+            <inheritdoc />
+        </member>
+        <member name="P:VirtualBridge.Data.VirtualBridgeData.Organisation">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Data.VirtualBridgeData.BeginTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Data.VirtualBridgeData.CommitTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Data.VirtualBridgeData.RollbackTransaction(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Data.VirtualBridgeData.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Data.VirtualBridgeData.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
         </member>
     </members>
 </doc>
