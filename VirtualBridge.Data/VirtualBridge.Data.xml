@@ -445,14 +445,5 @@
         <member name="M:VirtualBridge.Data.VirtualBridgeData.RollbackTransaction(VirtualBridge.Utilities.Models.Whos.IWho)">
             <inheritdoc />
         </member>
-        <member name="M:VirtualBridge.Data.VirtualBridgeData.Dispose">
-            <inheritdoc />
-        </member>
-        <member name="M:VirtualBridge.Data.VirtualBridgeData.Dispose(System.Boolean)">
-            <summary>
-            Releases unmanaged and - optionally - managed resources.
-            </summary>
-            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-        </member>
     </members>
 </doc>

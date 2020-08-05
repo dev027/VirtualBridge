@@ -32,10 +32,10 @@ namespace VirtualBridge.Data.Tests.Repositories.AuditHeaderRepositoryTests
         public async Task Test_With_Valid_Values()
         {
             // ARRANGE
-            Mock<ILogger<AuditHeaderRepository>> loggerMock = CreateLoggerMock();
-            DbContextOptions<DataContext> dbOptions = TestUtils.DbContextOptionsInMemory(
-                testClassName: nameof(CreateAsyncTests),
-                testName: nameof(this.Test_With_Valid_Values));
+            Mock<ILogger<AuditHeaderRepository>> loggerMock =
+                TestUtilities.MockFactory.CreateLoggerMock<AuditHeaderRepository>();
+            DbContextOptions<DataContext> dbOptions =
+                TestUtils.DbContextOptionsInMemory<CreateAsyncTests>(nameof(this.Test_With_Valid_Values));
             await using DataContext dataContext = new DataContext(dbOptions);
 
             IAuditHeaderRepository repository = new AuditHeaderRepository(
@@ -68,11 +68,6 @@ namespace VirtualBridge.Data.Tests.Repositories.AuditHeaderRepositoryTests
             // ASSERT
             Assert.AreEqual(1, await dataContext.AuditHeaders.CountAsync().ConfigureAwait(false));
             Assert.AreEqual(1, await dataContext.AuditDetails.CountAsync().ConfigureAwait(false));
-        }
-
-        private static Mock<ILogger<AuditHeaderRepository>> CreateLoggerMock()
-        {
-            return new Mock<ILogger<AuditHeaderRepository>>(MockBehavior.Loose);
         }
     }
 }

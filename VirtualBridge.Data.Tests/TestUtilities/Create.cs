@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using VirtualBridge.Data.Dtos;
 using VirtualBridge.Domain.Constants;
 
@@ -25,7 +26,7 @@ namespace VirtualBridge.Data.Tests.TestUtilities
                 timeStamp: DateTime.Now,
                 username: "Steve.Wright",
                 correlationId: Guid.NewGuid(),
-                auditDetails: null);
+                auditDetails: new List<AuditDetailDto>());
         }
 
         /// <summary>

@@ -236,6 +236,18 @@
             <param name="auditHeader">The audit header.</param>
             <returns>Audit Detail.</returns>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.TestUtilities.MockFactory">
+            <summary>
+            Mock Factory.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.MockFactory.CreateLoggerMock``1">
+            <summary>
+            Creates mock for ILogger.
+            </summary>
+            <typeparam name="T">Type of the class being logged.</typeparam>
+            <returns>Logger Mock.</returns>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.TestUtilities.TestUtils">
             <summary>
             Test Utilities.
@@ -251,12 +263,12 @@
             Gets the database context options.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory(System.String,System.String)">
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory``1(System.String)">
             <summary>
             Gets the database context options for In Memory database.
             </summary>
-            <param name="testClassName">Test Class Name.</param>
             <param name="testName">Test Name.</param>
+            <typeparam name="T">Test Class.</typeparam>
             <returns>Database options.</returns>
         </member>
         <member name="M:VirtualBridge.Data.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory(System.String)">
@@ -274,6 +286,40 @@
             <param name="target">Target object.</param>
             <param name="propName">Property name.</param>
             <param name="value">Value to set.</param>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor">
+            <summary>
+            Test the constructor for <see cref="T:VirtualBridge.Data.VirtualBridgeData"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor.Test_With_Valid_Values">
+            <summary>
+            Tests the with valid values.
+            </summary>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor.Test_That_Null_Logger_Throws_Exception">
+            <summary>
+            Tests the that null logger throws exception.
+            </summary>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor.Test_That_Null_Context_Throws_Exception">
+            <summary>
+            Tests the that null context throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor.Test_That_Null_Audit_Header_Repository_Throws_Exception">
+            <summary>
+            Tests the that null audit header repository throws exception.
+            </summary>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor.Test_That_Null_Organisation_Repository_Throws_Exception">
+            <summary>
+            Tests the that null organisation repository throws exception.
+            </summary>
+            <returns>Nothing.</returns>
         </member>
     </members>
 </doc>

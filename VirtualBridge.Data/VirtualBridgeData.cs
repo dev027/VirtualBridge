@@ -18,11 +18,10 @@ namespace VirtualBridge.Data
     /// <summary>
     /// Data access layer.
     /// </summary>
-    public class VirtualBridgeData : IVirtualBridgeData, IDisposable
+    public class VirtualBridgeData : IVirtualBridgeData
     {
         private readonly DataContext context;
         private readonly ILogger<VirtualBridgeData> logger;
-        private bool disposedValue; // To detect redundant calls
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VirtualBridgeData"/> class.
@@ -37,10 +36,10 @@ namespace VirtualBridge.Data
             IAuditHeaderRepository auditHeaderRepository,
             IOrganisationRepository organisationRepository)
         {
-            this.logger = logger;
-            this.context = dataContext;
-            this.AuditHeader = auditHeaderRepository;
-            this.Organisation = organisationRepository;
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.context = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
+            this.AuditHeader = auditHeaderRepository ?? throw new ArgumentNullException(nameof(auditHeaderRepository));
+            this.Organisation = organisationRepository ?? throw new ArgumentNullException(nameof(organisationRepository));
         }
 
         /// <inheritdoc />
@@ -121,31 +120,6 @@ namespace VirtualBridge.Data
                 "EXIT {Method}(who) {@Who}",
                 nameof(this.RollbackTransaction),
                 who);
-        }
-
-        /// <inheritdoc />
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposedValue)
-            {
-                if (disposing)
-                {
-                    // Dispose managed state (managed objects).
-                    this.context.Dispose();
-                }
-
-                this.disposedValue = true;
-            }
         }
     }
 }

@@ -37,24 +37,20 @@ namespace VirtualBridge.Data.Tests.TestUtilities
         /// <summary>
         /// Gets the database context options for In Memory database.
         /// </summary>
-        /// <param name="testClassName">Test Class Name.</param>
         /// <param name="testName">Test Name.</param>
+        /// <typeparam name="T">Test Class.</typeparam>
         /// <returns>Database options.</returns>
-        public static DbContextOptions<DataContext> DbContextOptionsInMemory(
-            string testClassName,
+        public static DbContextOptions<DataContext> DbContextOptionsInMemory<T>(
             string testName)
         {
-            if (testClassName == null)
-            {
-                throw new ArgumentNullException(nameof(testClassName));
-            }
-
             if (testName == null)
             {
                 throw new ArgumentNullException(nameof(testName));
             }
 
-            return DbContextOptionsInMemory($"{testClassName}__{testName}");
+            Type type = typeof(T);
+
+            return DbContextOptionsInMemory($"{type.FullName}__{testName}");
         }
 
         /// <summary>
