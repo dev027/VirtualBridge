@@ -26,7 +26,7 @@
             exposed in dbset properties on your derived context. The resulting model may be cached
             and re-used for subsequent instances of your derived context.
             </summary>
-            <param name="modelBuilder">The builder being used to construct the model for this context. Databases (and other extensions) typically
+            <param name="builder">The builder being used to construct the model for this context. Databases (and other extensions) typically
             define extension methods on this object that allow you to configure aspects of the model that are specific
             to a given database.</param>
             <exception cref="T:System.ArgumentNullException">modelBuilder.</exception>

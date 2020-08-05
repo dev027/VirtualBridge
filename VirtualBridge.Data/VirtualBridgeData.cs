@@ -46,39 +46,19 @@ namespace VirtualBridge.Data
         public IAuditHeaderRepository AuditHeader { get; }
 
         /// <inheritdoc />
-        public IOrganisationRepository Organisation { get;  }
+        public IOrganisationRepository Organisation { get; }
 
         /// <inheritdoc />
-        public async Task<IAuditHeaderWithAuditDetails> BeginTransactionAsync(
+        public Task<IAuditHeaderWithAuditDetails> BeginTransactionAsync(
             IWho who,
             EAuditEvent auditEvent)
         {
-            this.logger.LogTrace(
-                "ENTRY {Method}(who, auditEvent) {@Who} {@AuditEvent}",
-                nameof(this.BeginTransactionAsync),
-                who,
-                auditEvent);
-
             if (who == null)
             {
                 throw new ArgumentNullException(nameof(who));
             }
 
-            await this.context.Database.BeginTransactionAsync()
-                .ConfigureAwait(false);
-
-            AuditHeaderWithAuditDetails auditHeader = new AuditHeaderWithAuditDetails(
-                auditEvent: auditEvent,
-                username: "Guest",
-                correlationId: who.CorrelationId);
-
-            this.logger.LogTrace(
-                "EXIT {Method}(who, auditHeader) {@Who} {@AuditHeader}",
-                nameof(this.BeginTransactionAsync),
-                who,
-                auditHeader);
-
-            return auditHeader;
+            return this.BeginTransactionInternalAsync(who, auditEvent);
         }
 
         /// <inheritdoc />
@@ -120,6 +100,31 @@ namespace VirtualBridge.Data
                 "EXIT {Method}(who) {@Who}",
                 nameof(this.RollbackTransaction),
                 who);
+        }
+
+        private async Task<IAuditHeaderWithAuditDetails> BeginTransactionInternalAsync(IWho who, EAuditEvent auditEvent)
+        {
+            this.logger.LogTrace(
+                "ENTRY {Method}(who, auditEvent) {@Who} {@AuditEvent}",
+                nameof(this.BeginTransactionAsync),
+                who,
+                auditEvent);
+
+            await this.context.Database.BeginTransactionAsync()
+                .ConfigureAwait(false);
+
+            AuditHeaderWithAuditDetails auditHeader = new AuditHeaderWithAuditDetails(
+                auditEvent: auditEvent,
+                username: "Guest",
+                correlationId: who.CorrelationId);
+
+            this.logger.LogTrace(
+                "EXIT {Method}(who, auditHeader) {@Who} {@AuditHeader}",
+                nameof(this.BeginTransactionAsync),
+                who,
+                auditHeader);
+
+            return auditHeader;
         }
     }
 }

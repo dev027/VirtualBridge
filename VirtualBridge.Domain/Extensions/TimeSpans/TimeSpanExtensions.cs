@@ -19,19 +19,32 @@ namespace VirtualBridge.Domain.Extensions.TimeSpans
         /// <returns>Time Period.</returns>
         public static ETimePeriod ToTimePeriod(this TimeSpan timeOfDay)
         {
-            TimeSpan time1200 = new TimeSpan(12, 0, 0);
-            TimeSpan time1800 = new TimeSpan(18, 0, 0);
-
             TimeSpan timeOfDayWithoutDays = new TimeSpan(
                 timeOfDay.Hours,
                 timeOfDay.Minutes,
                 timeOfDay.Seconds);
 
-            return timeOfDayWithoutDays < time1200
-                ? ETimePeriod.Morning
-                : timeOfDayWithoutDays < time1800
-                    ? ETimePeriod.Afternoon
-                    : ETimePeriod.Evening;
+            if (IsMorning(timeOfDayWithoutDays))
+            {
+                return ETimePeriod.Morning;
+            }
+
+            return IsEvening(timeOfDayWithoutDays)
+                ? ETimePeriod.Evening
+                : ETimePeriod.Afternoon;
+        }
+
+        private static bool IsMorning(TimeSpan timeOfDayWithoutDays)
+        {
+            TimeSpan time1200 = new TimeSpan(12, 0, 0);
+            return timeOfDayWithoutDays < time1200;
+        }
+
+        private static bool IsEvening(TimeSpan timeOfDayWithoutDays)
+        {
+            TimeSpan time1800 = new TimeSpan(18, 0, 0);
+
+            return timeOfDayWithoutDays >= time1800;
         }
     }
 }
