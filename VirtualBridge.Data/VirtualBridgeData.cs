@@ -39,7 +39,8 @@ namespace VirtualBridge.Data
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.context = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
             this.AuditHeader = auditHeaderRepository ?? throw new ArgumentNullException(nameof(auditHeaderRepository));
-            this.Organisation = organisationRepository ?? throw new ArgumentNullException(nameof(organisationRepository));
+            this.Organisation =
+                organisationRepository ?? throw new ArgumentNullException(nameof(organisationRepository));
         }
 
         /// <inheritdoc />
@@ -125,31 +126,6 @@ namespace VirtualBridge.Data
                 "EXIT {Method}(who) {@Who}",
                 nameof(this.RollbackTransaction),
                 who);
-        }
-
-        private async Task<IAuditHeaderWithAuditDetails> BeginTransactionInternalAsync(IWho who, EAuditEvent auditEvent)
-        {
-            this.logger.LogTrace(
-                "ENTRY {Method}(who, auditEvent) {@Who} {@AuditEvent}",
-                nameof(this.BeginTransactionAsync),
-                who,
-                auditEvent);
-
-            await this.context.Database.BeginTransactionAsync()
-                .ConfigureAwait(false);
-
-            AuditHeaderWithAuditDetails auditHeader = new AuditHeaderWithAuditDetails(
-                auditEvent: auditEvent,
-                username: "Guest",
-                correlationId: who.CorrelationId);
-
-            this.logger.LogTrace(
-                "EXIT {Method}(who, auditHeader) {@Who} {@AuditHeader}",
-                nameof(this.BeginTransactionAsync),
-                who,
-                auditHeader);
-
-            return auditHeader;
         }
     }
 }
