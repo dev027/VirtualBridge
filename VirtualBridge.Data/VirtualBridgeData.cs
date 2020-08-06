@@ -58,7 +58,32 @@ namespace VirtualBridge.Data
                 throw new ArgumentNullException(nameof(who));
             }
 
-            return this.BeginTransactionInternalAsync(who, auditEvent);
+            return BeginTransactionInternalAsync();
+
+            async Task<IAuditHeaderWithAuditDetails> BeginTransactionInternalAsync()
+            {
+                this.logger.LogTrace(
+                    "ENTRY {Method}(who, auditEvent) {@Who} {@AuditEvent}",
+                    nameof(this.BeginTransactionAsync),
+                    who,
+                    auditEvent);
+
+                await this.context.Database.BeginTransactionAsync()
+                    .ConfigureAwait(false);
+
+                AuditHeaderWithAuditDetails auditHeader = new AuditHeaderWithAuditDetails(
+                    auditEvent: auditEvent,
+                    username: "Guest",
+                    correlationId: who.CorrelationId);
+
+                this.logger.LogTrace(
+                    "EXIT {Method}(who, auditHeader) {@Who} {@AuditHeader}",
+                    nameof(this.BeginTransactionAsync),
+                    who,
+                    auditHeader);
+
+                return auditHeader;
+            }
         }
 
         /// <inheritdoc />
