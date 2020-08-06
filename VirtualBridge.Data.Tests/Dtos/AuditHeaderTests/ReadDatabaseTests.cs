@@ -21,11 +21,16 @@ namespace VirtualBridge.Data.Tests.Dtos.AuditHeaderTests
         [TestMethod]
         public void Test_Read_From_Database()
         {
+            // ARRANGE
             using DataContext context = new DataContext(
                 TestUtils.DbContextOptionsInMemory(nameof(ReadDatabaseTests)));
 
+            // ACT
             _ = context.AuditHeaders.Any();
             _ = context.AuditHeaders.FirstOrDefault();
+
+            // ASSERT
+            Assert.IsTrue(true);
         }
     }
 }

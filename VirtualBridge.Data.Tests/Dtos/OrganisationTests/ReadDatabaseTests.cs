@@ -21,11 +21,16 @@ namespace VirtualBridge.Data.Tests.Dtos.OrganisationTests
         [TestMethod]
         public void Test_Read_From_Database()
         {
+            // ARRANGE
             using DataContext context = new DataContext(
                 TestUtils.DbContextOptionsInMemory(nameof(ReadDatabaseTests)));
 
+            // ACT
             _ = context.Organisations.Any();
             _ = context.Organisations.FirstOrDefault();
+
+            // ASSERT
+            Assert.IsTrue(true);
         }
     }
 }
