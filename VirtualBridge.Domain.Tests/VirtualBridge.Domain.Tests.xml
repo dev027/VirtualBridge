@@ -365,6 +365,25 @@
             Tests that an invalid time period throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Domain.Tests.Extensions.TimeSpans.ToTimePeriodTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Domain.Extensions.TimeSpans.TimeSpanExtensions.ToTimePeriod(System.TimeSpan)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.Extensions.TimeSpans.ToTimePeriodTests.Test_With_Various_Times(System.Int32,VirtualBridge.Domain.Constants.ETimePeriod)">
+            <summary>
+            Tests with various times.
+            </summary>
+            <param name="hours">Hour of the day.</param>
+            <param name="expectedValue">Expected value.</param>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.Extensions.TimeSpans.ToTimePeriodTests.Test_With_Times_Over_24_Hours(System.Int32,VirtualBridge.Domain.Constants.ETimePeriod)">
+            <summary>
+            Tests with various times over 24 hours.
+            </summary>
+            <param name="hours">Hour of the day.</param>
+            <param name="expectedValue">Expected value.</param>
+        </member>
         <member name="T:VirtualBridge.Domain.Tests.TestUtilities.Create">
             <summary>
             Create domain objects for tests.
