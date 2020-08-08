@@ -13,13 +13,22 @@ namespace VirtualBridge.Data.Tests.TestUtilities
     internal static class MockFactory
     {
         /// <summary>
-        /// Creates mock for ILogger.
+        /// Creates mock for <see cref="ILogger"/>.
         /// </summary>
         /// <typeparam name="T">Type of the class being logged.</typeparam>
         /// <returns>Logger Mock.</returns>
         internal static Mock<ILogger<T>> CreateLoggerMock<T>()
+            => new Mock<ILogger<T>>(MockBehavior.Loose);
+
+        /// <summary>
+        /// Creates the repository mock.
+        /// </summary>
+        /// <typeparam name="T">Repository interface.</typeparam>
+        /// <returns>Repository mock.</returns>
+        internal static Mock<T> CreateRepositoryMock<T>()
+        where T : class
         {
-            return new Mock<ILogger<T>>(MockBehavior.Loose);
+            return new Mock<T>(MockBehavior.Strict);
         }
     }
 }

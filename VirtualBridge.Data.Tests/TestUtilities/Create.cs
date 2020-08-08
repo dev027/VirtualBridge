@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using VirtualBridge.Data.Dtos;
 using VirtualBridge.Domain.Constants;
+using VirtualBridge.Utilities.Models.Whos;
 
 namespace VirtualBridge.Data.Tests.TestUtilities
 {
@@ -30,22 +31,35 @@ namespace VirtualBridge.Data.Tests.TestUtilities
         }
 
         /// <summary>
-        /// Audits the detail.
+        /// Creates an <see cref="AuditDetailDto"/>.
         /// </summary>
         /// <param name="auditHeader">The audit header.</param>
         /// <returns>Audit Detail.</returns>
         internal static AuditDetailDto AuditDetail(AuditHeaderDto auditHeader)
         {
             return new AuditDetailDto(
-                Guid.NewGuid(),
-                auditHeader.Id,
-                "TableName",
-                "ColumnName",
-                Guid.NewGuid(),
-                "Old Value",
-                "New Value",
-                EDatabaseAction.Update,
-                auditHeader);
+                id: Guid.NewGuid(),
+                auditHeaderId: auditHeader.Id,
+                tableName: "TableName",
+                columnName: "ColumnName",
+                recordId: Guid.NewGuid(),
+                oldValue: "Old Value",
+                newValue: "New Value",
+                databaseAction: EDatabaseAction.Update,
+                auditHeader: auditHeader);
+        }
+
+        /// <summary>
+        /// Create a <see cref="IWho"/>.
+        /// </summary>
+        /// <returns>Who details.</returns>
+        internal static IWho Who()
+        {
+            return new Who(
+                controllerName: "ControllerName",
+                actionName: "ActionName",
+                path: string.Empty,
+                queryString: string.Empty);
         }
     }
 }

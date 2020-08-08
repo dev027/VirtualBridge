@@ -120,6 +120,11 @@ namespace VirtualBridge.Data
                 nameof(this.RollbackTransaction),
                 who);
 
+            if (who == null)
+            {
+                throw new ArgumentNullException(nameof(who));
+            }
+
             this.context.Database.RollbackTransaction();
 
             this.logger.LogTrace(

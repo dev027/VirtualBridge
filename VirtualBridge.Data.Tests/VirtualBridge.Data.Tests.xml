@@ -231,10 +231,16 @@
         </member>
         <member name="M:VirtualBridge.Data.Tests.TestUtilities.Create.AuditDetail(VirtualBridge.Data.Dtos.AuditHeaderDto)">
             <summary>
-            Audits the detail.
+            Creates an <see cref="T:VirtualBridge.Data.Dtos.AuditDetailDto"/>.
             </summary>
             <param name="auditHeader">The audit header.</param>
             <returns>Audit Detail.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.Create.Who">
+            <summary>
+            Create a <see cref="T:VirtualBridge.Utilities.Models.Whos.IWho"/>.
+            </summary>
+            <returns>Who details.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Tests.TestUtilities.MockFactory">
             <summary>
@@ -243,10 +249,17 @@
         </member>
         <member name="M:VirtualBridge.Data.Tests.TestUtilities.MockFactory.CreateLoggerMock``1">
             <summary>
-            Creates mock for ILogger.
+            Creates mock for <see cref="T:Microsoft.Extensions.Logging.ILogger"/>.
             </summary>
             <typeparam name="T">Type of the class being logged.</typeparam>
             <returns>Logger Mock.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.TestUtilities.MockFactory.CreateRepositoryMock``1">
+            <summary>
+            Creates the repository mock.
+            </summary>
+            <typeparam name="T">Repository interface.</typeparam>
+            <returns>Repository mock.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Tests.TestUtilities.TestUtils">
             <summary>
@@ -286,6 +299,42 @@
             <param name="target">Target object.</param>
             <param name="propName">Property name.</param>
             <param name="value">Value to set.</param>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestBeginCommit">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.VirtualBridgeData.BeginTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent)"/>
+            and <see cref="M:VirtualBridge.Data.VirtualBridgeData.CommitTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestBeginCommit.Test_Commit_Writes_Record">
+            <summary>
+            Tests that the commit writes record.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestBeginCommit.Test_Begin_With_Null_Who_Throws_Exception">
+            <summary>
+            Tests the begin with null who throws exception.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestBeginRollback">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.VirtualBridgeData.BeginTransactionAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent)"/>
+            and <see cref="M:VirtualBridge.Data.VirtualBridgeData.RollbackTransaction(VirtualBridge.Utilities.Models.Whos.IWho)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestBeginRollback.Test_Rollback_Does_Not_Thorw_Exception">
+            <summary>
+            Tests that the rollback does not throw excetion.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestBeginRollback.Test_Rollback_With_Null_Who_Throws_Exception">
+            <summary>
+            Tests the begin with null who throws exception.
+            </summary>
+            <returns>NOTHING.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Tests.VirtualBridgeDataTests.TestConstructor">
             <summary>

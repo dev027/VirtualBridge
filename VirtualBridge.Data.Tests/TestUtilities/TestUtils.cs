@@ -6,6 +6,7 @@ using System;
 using System.Globalization;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using VirtualBridge.Data.DbContexts;
 
 namespace VirtualBridge.Data.Tests.TestUtilities
@@ -67,7 +68,9 @@ namespace VirtualBridge.Data.Tests.TestUtilities
             }
 
             DbContextOptionsBuilder<DataContext> builder = new DbContextOptionsBuilder<DataContext>();
-            builder.UseInMemoryDatabase(testDatabaseName);
+            builder.UseInMemoryDatabase(testDatabaseName)
+                .ConfigureWarnings(x => x.Ignore(
+                    InMemoryEventId.TransactionIgnoredWarning));
             return builder.Options;
         }
 
