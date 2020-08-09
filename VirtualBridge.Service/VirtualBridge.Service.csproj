@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -6,7 +6,7 @@
     <Company>Do It Wright</Company>
     <Authors>Steve Wright</Authors>
     <Product>Virtual Bridge</Product>
-    <Description>Domain for Virtual Bridge.</Description>
+    <Description>Service Layer for Virtual Bridge.</Description>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
@@ -19,7 +19,7 @@
     <CodeAnalysisRuleSet>C:\Users\Steve\Documents\Visual Studio 2019\DoItWright.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <DocumentationFile>VirtualBridge.Domain.xml</DocumentationFile>
+    <DocumentationFile>VirtualBridge.Service.xml</DocumentationFile>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -45,7 +45,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DomainObjects\Sessions\" />
-    <Folder Include="ValueObjects\" />
+    <ProjectReference Include="..\VirtualBridge.Data\VirtualBridge.Data.csproj" />
+    <ProjectReference Include="..\VirtualBridge.Domain\VirtualBridge.Domain.csproj" />
+    <ProjectReference Include="..\VirtualBridge.Utilities\VirtualBridge.Utilities.csproj" />
   </ItemGroup>
 </Project>
