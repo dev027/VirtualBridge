@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualBridge.Service.Organisation.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.ConstructorTests">
+            <summary>
+            Constructor tests for <see cref="T:VirtualBridge.Service.Organisation.OrganisationService"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.ConstructorTests.Test_With_Valid_Values">
+            <summary>
+            Tests with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.ConstructorTests.Test_Null_Logger_Throws_Exception">
+            <summary>
+            Tests that  null logger throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.ConstructorTests.Test_Null_VirtualBridgeData_Throws_Exception">
+            <summary>
+            Tests that  null virtual bridge data throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.CreateAsyncTests">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Service.Organisation.IOrganisationService.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.CreateAsyncTests.Test_Passing_Valid_Values">
+            <summary>
+            Test by passing valid values.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.CreateAsyncTests.Test_Passing_Null_Who_Throws_Exception">
+            <summary>
+            Test passing null who throws exception.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.CreateAsyncTests.Test_Passing_Null_Organisation_Throws_Exception">
+            <summary>
+            Test passing null organisation throws exception.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.OrganisationServiceTests.CreateAsyncTests.Test_Exception_Triggers_Rollback">
+            <summary>
+            Test exception triggers rollback.
+            </summary>
+            <returns>NOTHING.</returns>
+        </member>
+        <member name="T:VirtualBridge.Service.Organisation.Tests.TestUtilities.Create">
+            <summary>
+            Create DTOs for tests.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.Create.Organisation">
+            <summary>
+            Creates an <see cref="T:VirtualBridge.Data.Dtos.AuditHeaderDto"/>.
+            </summary>
+            <returns>Audit Header.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.Create.Who">
+            <summary>
+            Create a <see cref="T:VirtualBridge.Utilities.Models.Whos.IWho"/>.
+            </summary>
+            <returns>Who details.</returns>
+        </member>
+        <member name="T:VirtualBridge.Service.Organisation.Tests.TestUtilities.MockFactory">
+            <summary>
+            Mock Factory.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.MockFactory.CreateLoggerMock``1">
+            <summary>
+            Creates mock for <see cref="T:Microsoft.Extensions.Logging.ILogger"/>.
+            </summary>
+            <typeparam name="T">Type of the class being logged.</typeparam>
+            <returns>Logger Mock.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.MockFactory.CreateRepositoryMock``1">
+            <summary>
+            Creates the repository mock.
+            </summary>
+            <typeparam name="T">Repository interface.</typeparam>
+            <returns>Repository mock.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.MockFactory.CreateVirtualBridgeData(VirtualBridge.Data.DbContexts.DataContext,VirtualBridge.Data.Repositories.AuditHeaders.IAuditHeaderRepository,VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository)">
+            <summary>
+            Creates a data layer.
+            </summary>
+            <param name="dataContext">The data context.</param>
+            <param name="auditHeaderRepository">The audit header repository.</param>
+            <param name="organisationRepository">The organisation repository.</param>
+            <returns>Data layer.</returns>
+        </member>
+        <member name="T:VirtualBridge.Service.Organisation.Tests.TestUtilities.TestUtils">
+            <summary>
+            Test Utilities.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Service.Organisation.Tests.TestUtilities.TestUtils.ConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Service.Organisation.Tests.TestUtilities.TestUtils.DbContextOptions">
+            <summary>
+            Gets the database context options.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory``1(System.String)">
+            <summary>
+            Gets the database context options for In Memory database.
+            </summary>
+            <param name="testName">Test Name.</param>
+            <typeparam name="T">Test Class.</typeparam>
+            <returns>Database options.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.TestUtils.DbContextOptionsInMemory(System.String)">
+            <summary>
+            Gets the database context options for In Memory database.
+            </summary>
+            <param name="testDatabaseName">Test Database Name.</param>
+            <returns>Database options.</returns>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.Tests.TestUtilities.TestUtils.SetPrivatePropertyValue``1(System.Object,System.String,``0)">
+            <summary>
+            Sets the private property value.
+            </summary>
+            <typeparam name="T">Property Type.</typeparam>
+            <param name="target">Target object.</param>
+            <param name="propName">Property name.</param>
+            <param name="value">Value to set.</param>
+        </member>
+    </members>
+</doc>

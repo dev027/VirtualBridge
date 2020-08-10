@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,7 +6,7 @@
     <Company>Do It Wright</Company>
     <Authors>Steve Wright</Authors>
     <Product>Virtual Bridge</Product>
-    <Description>Test for Service Layer for Virtual Bridge.</Description>
+    <Description>Tests for Organisation Service Layer for Virtual Bridge.</Description>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
@@ -15,7 +15,7 @@
     <CodeAnalysisRuleSet>C:\Users\Steve\Documents\Visual Studio 2019\DoItWright.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <DocumentationFile>VirtualBridge.Service.Tests.xml</DocumentationFile>
+    <DocumentationFile>VirtualBridge.Service.Organisation.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +24,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Moq" Version="4.14.5" />
     <PackageReference Include="SonarAnalyzer.CSharp" Version="8.10.0.19839">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -46,6 +47,11 @@
 
   <ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VirtualBridge.Service.Organisation\VirtualBridge.Service.Organisation.csproj" />
+    <ProjectReference Include="..\VirtualBridge.Utilities.Testing\VirtualBridge.Utilities.Testing.csproj" />
   </ItemGroup>
 
 </Project>

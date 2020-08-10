@@ -90,7 +90,7 @@ namespace VirtualBridge.Data
         /// <inheritdoc />
         public async Task CommitTransactionAsync(
             IWho who,
-            IAuditHeaderWithAuditDetails auditHeader)
+            IAuditHeaderWithAuditDetails? auditHeader)
         {
             this.logger.LogTrace(
                 "ENTRY {Method}(who, auditHeader) {@Who} {@AuditHeader}",

@@ -15,7 +15,7 @@ namespace VirtualBridge.Domain.ValidationAttributes
     public sealed class ValidTimeOfDayAttribute : ValidationAttribute
     {
         /// <inheritdoc />
-        public override bool IsValid(object value)
+        public override bool IsValid(object? value)
         {
             if (value == null)
             {

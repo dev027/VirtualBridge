@@ -42,7 +42,7 @@ namespace VirtualBridge.Domain.ValidationAttributes
             object value,
             ValidationContext validationContext)
         {
-            PropertyInfo timeOfDayProperty = validationContext.ObjectType.GetProperty(this.timeOfDayPropertyName);
+            PropertyInfo? timeOfDayProperty = validationContext.ObjectType.GetProperty(this.timeOfDayPropertyName);
 
             if (timeOfDayProperty == null)
             {

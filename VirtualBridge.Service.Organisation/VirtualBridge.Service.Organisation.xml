@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualBridge.Service.Organisation</name>
+    </assembly>
+    <members>
+        <member name="T:VirtualBridge.Service.Organisation.IOrganisationService">
+            <summary>
+            Organisation Service Layer.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.IOrganisationService.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <summary>
+            Creates the organisation.
+            </summary>
+            <param name="who">Who Details.</param>
+            <param name="auditEvent">Audit Event.</param>
+            <param name="organisation">Organisation.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="T:VirtualBridge.Service.Organisation.OrganisationService">
+            <summary>
+            Organisation Service Layer.
+            </summary>
+            <seealso cref="T:VirtualBridge.Service.Organisation.IOrganisationService" />
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.OrganisationService.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Service.Organisation.IOrganisationService},VirtualBridge.Data.IVirtualBridgeData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Service.Organisation.OrganisationService"/> class.
+            </summary>
+            <param name="logger">Logger.</param>
+            <param name="data">Data layer.</param>
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.OrganisationService.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
