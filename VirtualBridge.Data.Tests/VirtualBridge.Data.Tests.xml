@@ -207,6 +207,93 @@
             Tests passing null Organisation throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests">
+            <summary>
+            Test <see cref="N:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions"/> GetValueAsString().
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Read_Numeric_Value_As_String">
+            <summary>
+            Tests the read numeric value as string.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Read_Null_Value_Returns_Empty_String">
+            <summary>
+            Tests the read null value returns empty string.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Read_Object_Returns_Its_ToString">
+            <summary>
+            Tests the read object returns its to string.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Passing_Null_PropertyInfo_Throws_Exception">
+            <summary>
+            Tests the passing null property information throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Passing_Null_Object_Throws_Exception">
+            <summary>
+            Tests the passing null object throws exception.
+            </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing">
+            <summary>
+            Test object.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing.MyPropertyLong">
+            <summary>
+            Gets my property long.
+            </summary>
+            <value>
+            Always 1.
+            </value>
+        </member>
+        <member name="P:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing.MyPropertyNullableLong">
+            <summary>
+            Gets my property nullable long.
+            </summary>
+            <value>
+            Always null.
+            </value>
+        </member>
+        <member name="P:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing.MyPropertySomething">
+            <summary>
+            Gets my property something.
+            </summary>
+            <value>
+            A something.
+            </value>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Something">
+            <summary>
+            Used to test that a class can be read.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Something.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Models.PropertyAttributeSummaryTests.ConstructorTests">
+            <summary>
+            Test the constructor for <see cref="T:VirtualBridge.Data.Models.PropertyAttributeSummary"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Models.PropertyAttributeSummaryTests.ConstructorTests.Test_With_Valid_Values">
+            <summary>
+            Tests the with valid values.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Models.PropertyAttributeSummaryTests.ConstructorTests.Test_With_Null_Values">
+            <summary>
+            Tests the with null values.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.Repositories.AuditHeaderRepositoryTests.CreateAsyncTests">
             <summary>
             Test <see cref="M:VirtualBridge.Data.Repositories.AuditHeaders.IAuditHeaderRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails)"/>.

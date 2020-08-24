@@ -4,6 +4,12 @@
         <name>VirtualBridge.Data</name>
     </assembly>
     <members>
+        <member name="T:VirtualBridge.Data.Attributes.AuditIgnoreAttribute">
+            <summary>
+            Marks a property on a DTO to be excluded from the Audit.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
         <member name="T:VirtualBridge.Data.DbContexts.DataContext">
             <summary>
             Database Context.
@@ -284,6 +290,35 @@
             </summary>
             <returns>Organisation.</returns>
         </member>
+        <member name="T:VirtualBridge.Data.Extensions.ReflectionExtensions">
+            <summary>
+            Reflection Extension methods.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Extensions.ReflectionExtensions.GetValueAsString(System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Gets the Property Value from the Object as a string.
+            </summary>
+            <param name="propertyInfo">Property Information.</param>
+            <param name="o">Object.</param>
+            <returns>Property Value as a sting.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Extensions.ReflectionExtensions.IsCollection(System.Reflection.PropertyInfo)">
+            <summary>
+            Determines whether this instance is a collection.
+            </summary>
+            <param name="instance">The instance.</param>
+            <returns>
+              <c>true</c> if the specified instance is collection; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Extensions.ReflectionExtensions.GetAttributes(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the attributes.
+            </summary>
+            <param name="instance">The Instance.</param>
+            <returns>Property Attributes.</returns>
+        </member>
         <member name="T:VirtualBridge.Data.IVirtualBridgeData">
             <summary>
             Data Access Layer - Transactions.
@@ -321,6 +356,46 @@
             Rollbacks the Transaction.
             </summary>
             <param name="who">Who details.</param>
+        </member>
+        <member name="T:VirtualBridge.Data.Models.PropertyAttributeSummary">
+            <summary>
+            Class detailing the known property attributes.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Models.PropertyAttributeSummary.#ctor(VirtualBridge.Data.Attributes.AuditIgnoreAttribute,System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute,System.ComponentModel.DataAnnotations.KeyAttribute,System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute,System.ComponentModel.DataAnnotations.RangeAttribute)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Models.PropertyAttributeSummary"/> class.
+            </summary>
+            <param name="auditIgnore">Audit Ignore attribute.</param>
+            <param name="foreignKey">Foreign Key attribute.</param>
+            <param name="key">Key attribute.</param>
+            <param name="notMapped">Not Mapped attribute.</param>
+            <param name="range">Range attribute.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.Models.PropertyAttributeSummary.AuditIgnore">
+            <summary>
+            Gets the Audit Ignore attribute.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Models.PropertyAttributeSummary.ForeignKey">
+            <summary>
+            Gets the Foreign Key attribute.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Models.PropertyAttributeSummary.Key">
+            <summary>
+            Gets the key attribute.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Models.PropertyAttributeSummary.NotMapped">
+            <summary>
+            Gets the Not Mapped attribute.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Models.PropertyAttributeSummary.Range">
+            <summary>
+            Gets the range attribute.
+            </summary>
         </member>
         <member name="T:VirtualBridge.Data.Repositories.AuditHeaders.AuditHeaderRepository">
             <summary>
@@ -395,6 +470,52 @@
             <param name="organisation">Organisation.</param>
             <returns>Nothing.</returns>
         </member>
+        <member name="T:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository">
+            <summary>
+            Audit Header Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Data.Repositories.Organisations.OrganisationRepository},VirtualBridge.Data.DbContexts.DataContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository"/> class.
+            </summary>
+            <param name="logger">Logger.</param>
+            <param name="dataContext">Data context.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.GetByIdAsync(VirtualBridge.Utilities.Models.Whos.IWho,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.HaveAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.UpdateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.RepositoryBase">
+            <summary>
+            Base class for all repositories.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.RepositoryBase.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Repositories.RepositoryBase"/> class.
+            </summary>
+            <param name="repositoryName">Repository Name.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.RepositoryBase.Tag(VirtualBridge.Utilities.Models.Whos.IWho,System.String)">
+            <summary>
+            Returns tag for use with .TagWith().
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="methodName">Method Name.</param>
+            <returns>Tag.</returns>
+        </member>
         <member name="T:VirtualBridge.Data.Resources.ExceptionResource">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -415,6 +536,80 @@
             <summary>
               Looks up a localized string similar to Cannot convert to {0} if {1} is null..
             </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Utilities.Audit">
+            <summary>
+            Audit routines.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.Audit.AuditCreate(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Data.Dtos.BaseDto,System.Guid)">
+            <summary>
+            Audits the create.
+            </summary>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="newObject">New value.</param>
+            <param name="recordId">Record Id.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.Audit.AuditUpdate(VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,System.Guid,VirtualBridge.Data.Dtos.BaseDto,VirtualBridge.Data.Dtos.BaseDto)">
+            <summary>
+            Audits the update.
+            </summary>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="recordId">Record Id.</param>
+            <param name="oldObject">Old Value.</param>
+            <param name="newObject">New Value.</param>
+        </member>
+        <member name="T:VirtualBridge.Data.Utilities.CompareNullable">
+            <summary>
+            Compare routines that handles if one/both of the values are null.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.CompareNullable.AreEqual(System.String,System.String)">
+            <summary>
+            Compares two string values.
+            </summary>
+            <param name="a">1st value.</param>
+            <param name="b">2nd value.</param>
+            <returns>Returns true if the values are equal.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.CompareNullable.AreEqual(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Compares two integer values.
+            </summary>
+            <param name="a">1st value.</param>
+            <param name="b">2nd value.</param>
+            <returns>Returns true if the values are equal.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.CompareNullable.AreEqual(System.Nullable{System.Decimal},System.Nullable{System.Decimal})">
+            <summary>
+            Compares two decimal values.
+            </summary>
+            <param name="a">1st value.</param>
+            <param name="b">2nd value.</param>
+            <returns>Returns true if the values are equal.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.CompareNullable.AreEqual(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Compares two datetime values.
+            </summary>
+            <param name="a">1st value.</param>
+            <param name="b">2nd value.</param>
+            <returns>Returns true if the values are equal.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Utilities.PropertyUtilities">
+            <summary>
+            Property Utilities.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Utilities.PropertyUtilities.IsAuditableColumn(System.ComponentModel.PropertyDescriptorCollection,System.Reflection.PropertyInfo)">
+            <summary>
+            Determines whether [is auditable column] [the specified property descriptors].
+            </summary>
+            <param name="propertyDescriptors">Property Descriptors.</param>
+            <param name="propertyInfo">Property Information.</param>
+            <returns>
+              <c>true</c> if [is auditable column] [the specified property descriptors]; otherwise, <c>false</c>.
+            </returns>
         </member>
         <member name="T:VirtualBridge.Data.VirtualBridgeData">
             <summary>

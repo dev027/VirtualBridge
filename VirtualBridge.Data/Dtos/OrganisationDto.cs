@@ -14,7 +14,7 @@ namespace VirtualBridge.Data.Dtos
     /// Organisation DTO.
     /// </summary>
     [Table(nameof(DataContext.Organisations))]
-    public class OrganisationDto
+    public class OrganisationDto : BaseDto
     {
         #region Constructors
 
