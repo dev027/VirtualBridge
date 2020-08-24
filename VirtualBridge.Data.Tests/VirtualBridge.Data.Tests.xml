@@ -207,42 +207,42 @@
             Tests passing null Organisation throws exception.
             </summary>
         </member>
-        <member name="T:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests">
+        <member name="T:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests">
             <summary>
-            Test <see cref="N:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions"/> GetValueAsString().
+            Test <see cref="M:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions.GetValueAsString(System.Reflection.PropertyInfo,System.Object)"/>.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Read_Numeric_Value_As_String">
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Test_Read_Numeric_Value_As_String">
             <summary>
             Tests the read numeric value as string.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Read_Null_Value_Returns_Empty_String">
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Test_Read_Null_Value_Returns_Empty_String">
             <summary>
             Tests the read null value returns empty string.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Read_Object_Returns_Its_ToString">
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Test_Read_Object_Returns_Its_ToString">
             <summary>
             Tests the read object returns its to string.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Passing_Null_PropertyInfo_Throws_Exception">
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Test_Passing_Null_PropertyInfo_Throws_Exception">
             <summary>
             Tests the passing null property information throws exception.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Test_Passing_Null_Object_Throws_Exception">
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Test_Passing_Null_Object_Throws_Exception">
             <summary>
             Tests the passing null object throws exception.
             </summary>
         </member>
-        <member name="T:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing">
+        <member name="T:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.TestThing">
             <summary>
             Test object.
             </summary>
         </member>
-        <member name="P:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing.MyPropertyLong">
+        <member name="P:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.TestThing.MyPropertyLong">
             <summary>
             Gets my property long.
             </summary>
@@ -250,7 +250,7 @@
             Always 1.
             </value>
         </member>
-        <member name="P:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing.MyPropertyNullableLong">
+        <member name="P:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.TestThing.MyPropertyNullableLong">
             <summary>
             Gets my property nullable long.
             </summary>
@@ -258,7 +258,7 @@
             Always null.
             </value>
         </member>
-        <member name="P:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.TestThing.MyPropertySomething">
+        <member name="P:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.TestThing.MyPropertySomething">
             <summary>
             Gets my property something.
             </summary>
@@ -266,18 +266,36 @@
             A something.
             </value>
         </member>
-        <member name="T:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Something">
+        <member name="T:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Something">
             <summary>
             Used to test that a class can be read.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Tests.Extensions.ReflectionExtensions.GetValueAsStringTests.Something.ToString">
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.GetValueAsStringTests.Something.ToString">
             <summary>
             Converts to string.
             </summary>
             <returns>
             A <see cref="T:System.String" /> that represents this instance.
             </returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Tests.Extensions.Reflection.IsCollectionTests">
+            <summary>
+            Test <see cref="M:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions.IsCollection(System.Reflection.PropertyInfo)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.IsCollectionTests.Test_If_Property_Is_A_Collection(System.String,System.Boolean)">
+            <summary>
+            Tests if property is a collection.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <param name="expectedIsCollection">if set to <c>true</c> [expected is collection].</param>
+            <exception cref="T:System.InvalidOperationException">Cannot find property <c>propertyName</c>.</exception>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.IsCollectionTests.Test_Null_Property_Throws_Exception">
+            <summary>
+            Tests that a null property throws exception.
+            </summary>
         </member>
         <member name="T:VirtualBridge.Data.Tests.Models.PropertyAttributeSummaryTests.ConstructorTests">
             <summary>

@@ -6,12 +6,12 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VirtualBridge.Data.Extensions;
+using VirtualBridge.Data.Extensions.Reflection;
 
-namespace VirtualBridge.Data.Tests.Extensions.ReflectionExtensions
+namespace VirtualBridge.Data.Tests.Extensions.Reflection
 {
     /// <summary>
-    /// Test <see cref="ReflectionExtensions"/> GetValueAsString().
+    /// Test <see cref="ReflectionExtensions.GetValueAsString"/>.
     /// </summary>
     [TestClass]
     public class GetValueAsStringTests

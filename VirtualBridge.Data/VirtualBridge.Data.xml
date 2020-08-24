@@ -290,12 +290,25 @@
             </summary>
             <returns>Organisation.</returns>
         </member>
-        <member name="T:VirtualBridge.Data.Extensions.ReflectionExtensions">
+        <member name="T:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions">
+            <summary>
+            Reflection Extension methods.
+            </summary>
+            <summary>
+            Reflection Extension methods - GetValueAsString.
+            </summary>
             <summary>
             Reflection Extension methods.
             </summary>
         </member>
-        <member name="M:VirtualBridge.Data.Extensions.ReflectionExtensions.GetValueAsString(System.Reflection.PropertyInfo,System.Object)">
+        <member name="M:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions.GetAttributes(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the attributes.
+            </summary>
+            <param name="instance">The Instance.</param>
+            <returns>Property Attributes.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions.GetValueAsString(System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Gets the Property Value from the Object as a string.
             </summary>
@@ -303,7 +316,7 @@
             <param name="o">Object.</param>
             <returns>Property Value as a sting.</returns>
         </member>
-        <member name="M:VirtualBridge.Data.Extensions.ReflectionExtensions.IsCollection(System.Reflection.PropertyInfo)">
+        <member name="M:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions.IsCollection(System.Reflection.PropertyInfo)">
             <summary>
             Determines whether this instance is a collection.
             </summary>
@@ -311,13 +324,6 @@
             <returns>
               <c>true</c> if the specified instance is collection; otherwise, <c>false</c>.
             </returns>
-        </member>
-        <member name="M:VirtualBridge.Data.Extensions.ReflectionExtensions.GetAttributes(System.ComponentModel.PropertyDescriptor)">
-            <summary>
-            Gets the attributes.
-            </summary>
-            <param name="instance">The Instance.</param>
-            <returns>Property Attributes.</returns>
         </member>
         <member name="T:VirtualBridge.Data.IVirtualBridgeData">
             <summary>

@@ -5,7 +5,7 @@
 using System;
 using System.ComponentModel;
 using System.Reflection;
-using VirtualBridge.Data.Extensions;
+using VirtualBridge.Data.Extensions.Reflection;
 using VirtualBridge.Data.Models;
 
 namespace VirtualBridge.Data.Utilities

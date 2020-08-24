@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 using VirtualBridge.Data.Dtos;
-using VirtualBridge.Data.Extensions;
+using VirtualBridge.Data.Extensions.Reflection;
 using VirtualBridge.Domain.DomainObjects.AuditDetails;
 using VirtualBridge.Domain.DomainObjects.AuditHeaders;
 
