@@ -38,6 +38,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 WebApi", "05 WebApi", "{3C350FE7-83B6-4354-90AE-4E230404A680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBridge.WebApi", "VirtualBridge.WebApi\VirtualBridge.WebApi.csproj", "{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +130,14 @@ Global
 		{8D4D31C8-5EB6-4176-9AB8-5A963B38F7FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D4D31C8-5EB6-4176-9AB8-5A963B38F7FA}.Release|x64.ActiveCfg = Release|Any CPU
 		{8D4D31C8-5EB6-4176-9AB8-5A963B38F7FA}.Release|x64.Build.0 = Release|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Debug|x64.Build.0 = Debug|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Release|x64.ActiveCfg = Release|Any CPU
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +153,7 @@ Global
 		{19A1D5C5-5EC6-408C-9E2A-F63CAE807438} = {C45A7AE5-0CFF-45DE-984C-309E3B2F7148}
 		{9763059D-D657-4856-9CF7-BA016C47B18F} = {C45A7AE5-0CFF-45DE-984C-309E3B2F7148}
 		{8D4D31C8-5EB6-4176-9AB8-5A963B38F7FA} = {BF1D24CB-1B6B-4770-A96F-F0A3AB63CE73}
+		{C469FBAB-01BC-4F41-8123-57A9C9FAF3BE} = {3C350FE7-83B6-4354-90AE-4E230404A680}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAF22097-CD6D-4280-8516-E73571517831}

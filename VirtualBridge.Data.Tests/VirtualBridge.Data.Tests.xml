@@ -297,6 +297,26 @@
             Tests that a null property throws exception.
             </summary>
         </member>
+        <member name="T:VirtualBridge.Data.Tests.Extensions.Reflection.TestPropertyAttributeSummary">
+            <summary>
+            Tests for <see cref="M:VirtualBridge.Data.Extensions.Reflection.ReflectionExtensions.GetAttributes(System.ComponentModel.PropertyDescriptor)"/>.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.TestPropertyAttributeSummary.Test_Reading_Property_With_Attributes">
+            <summary>
+            Tests reading property with attributes.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.TestPropertyAttributeSummary.Test_Reading_Property_Without_Attributes">
+            <summary>
+            Tests  reading property without attributes.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Tests.Extensions.Reflection.TestPropertyAttributeSummary.Test_Reading_Null_Property_Throws_Exception">
+            <summary>
+            Tests the reading null property throws exception.
+            </summary>
+        </member>
         <member name="T:VirtualBridge.Data.Tests.Models.PropertyAttributeSummaryTests.ConstructorTests">
             <summary>
             Test the constructor for <see cref="T:VirtualBridge.Data.Models.PropertyAttributeSummary"/>.
