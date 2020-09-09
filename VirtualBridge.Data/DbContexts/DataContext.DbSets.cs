@@ -24,6 +24,11 @@ namespace VirtualBridge.Data.DbContexts
         public DbSet<AuditDetailDto> AuditDetails { get; set; } = null!;
 
         /// <summary>
+        /// Gets or sets the Hosts.
+        /// </summary>
+        public DbSet<HostDto> Hosts { get; set; } = null!;
+
+        /// <summary>
         /// Gets or sets the Organisations.
         /// </summary>
         public DbSet<OrganisationDto> Organisations { get; set; } = null!;

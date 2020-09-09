@@ -57,6 +57,11 @@
             Gets or sets the Audit Details.
             </summary>
         </member>
+        <member name="P:VirtualBridge.Data.DbContexts.DataContext.Hosts">
+            <summary>
+            Gets or sets the Hosts.
+            </summary>
+        </member>
         <member name="P:VirtualBridge.Data.DbContexts.DataContext.Organisations">
             <summary>
             Gets or sets the Organisations.
@@ -231,6 +236,52 @@
             <summary>
             Base model for DTOs.
             </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Dtos.HostDto">
+            <summary>
+            Host DTO.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.HostDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.HostDto"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.HostDto.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.HostDto"/> class.
+            </summary>
+            <param name="id">Host Id.</param>
+            <param name="firstName">First Name.</param>
+            <param name="surname">Surname.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.HostDto.Id">
+            <summary>
+            Gets the Host Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.HostDto.FirstName">
+            <summary>
+            Gets the First Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.HostDto.Surname">
+            <summary>
+            Gets the Surname.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.HostDto.ToDto(VirtualBridge.Domain.DomainObjects.Hosts.IHost)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="host">Host.</param>
+            <returns>Host DTO.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.HostDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Host.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Dtos.OrganisationDto">
             <summary>
@@ -431,6 +482,78 @@
             <param name="auditHeader">Audit Header with Audit Details.</param>
             <returns>Nothing.</returns>
         </member>
+        <member name="T:VirtualBridge.Data.Repositories.Hosts.HostRepository">
+            <summary>
+            Audit Header Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.HostRepository.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Data.Repositories.Hosts.HostRepository},VirtualBridge.Data.DbContexts.DataContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Repositories.Hosts.HostRepository"/> class.
+            </summary>
+            <param name="logger">Logger.</param>
+            <param name="dataContext">Data context.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.HostRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Hosts.IHost)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.HostRepository.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.HostRepository.GetByIdAsync(VirtualBridge.Utilities.Models.Whos.IWho,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.HostRepository.HaveAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.HostRepository.UpdateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Hosts.IHost)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.Hosts.IHostRepository">
+            <summary>
+            Host Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.IHostRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Hosts.IHost)">
+            <summary>
+            Creates the Host.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="host">Host.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.IHostRepository.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Gets all hosts.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>List of Hosts.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.IHostRepository.GetByIdAsync(VirtualBridge.Utilities.Models.Whos.IWho,System.Guid)">
+            <summary>
+            Gets the Host by Id.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="hostId">Host Id.</param>
+            <returns>Host (Null=Not Found).</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.IHostRepository.HaveAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Checks if we have Hosts.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>True if Host exist.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Hosts.IHostRepository.UpdateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Hosts.IHost)">
+            <summary>
+            Updates the Host.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="host">Host.</param>
+            <returns>Nothing.</returns>
+        </member>
         <member name="T:VirtualBridge.Data.Repositories.Organisations.IOrganisationRepository">
             <summary>
             Organisation Repository.
@@ -478,7 +601,7 @@
         </member>
         <member name="T:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository">
             <summary>
-            Audit Header Repository.
+            Organisation Header Repository.
             </summary>
         </member>
         <member name="M:VirtualBridge.Data.Repositories.Organisations.OrganisationRepository.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Data.Repositories.Organisations.OrganisationRepository},VirtualBridge.Data.DbContexts.DataContext)">
