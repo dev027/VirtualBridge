@@ -2,6 +2,7 @@
 // Copyright (c) Do It Wright. All rights reserved.
 // </copyright>
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Organisations;
@@ -25,5 +26,13 @@ namespace VirtualBridge.Service.Organisation
             IWho who,
             EAuditEvent auditEvent,
             IOrganisation organisation);
+
+        /// <summary>
+        /// Gets all organisations.
+        /// </summary>
+        /// <param name="who">Who details.</param>
+        /// <returns>List of Organisations.</returns>
+        Task<IList<IOrganisation>> GetAllAsync(
+            IWho who);
     }
 }

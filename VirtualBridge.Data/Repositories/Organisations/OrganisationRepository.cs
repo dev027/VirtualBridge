@@ -18,7 +18,7 @@ using VirtualBridge.Utilities.Models.Whos;
 namespace VirtualBridge.Data.Repositories.Organisations
 {
     /// <summary>
-    /// Audit Header Repository.
+    /// Organisation Header Repository.
     /// </summary>
     public class OrganisationRepository : RepositoryBase, IOrganisationRepository
     {
@@ -35,8 +35,8 @@ namespace VirtualBridge.Data.Repositories.Organisations
             DataContext dataContext)
             : base(nameof(OrganisationRepository))
         {
-            this.logger = logger;
-            this.context = dataContext;
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.context = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
         }
 
         /// <inheritdoc/>

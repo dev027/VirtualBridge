@@ -18,6 +18,13 @@
             <param name="organisation">Organisation.</param>
             <returns>Nothing.</returns>
         </member>
+        <member name="M:VirtualBridge.Service.Organisation.IOrganisationService.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Gets all organisations.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>List of Organisations.</returns>
+        </member>
         <member name="T:VirtualBridge.Service.Organisation.OrganisationService">
             <summary>
             Organisation Service Layer.
@@ -32,6 +39,9 @@
             <param name="data">Data layer.</param>
         </member>
         <member name="M:VirtualBridge.Service.Organisation.OrganisationService.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.Constants.EAuditEvent,VirtualBridge.Domain.DomainObjects.Organisations.IOrganisation)">
+            <inheritdoc />
+        </member>
+        <member name="M:VirtualBridge.Service.Organisation.OrganisationService.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
             <inheritdoc />
         </member>
     </members>

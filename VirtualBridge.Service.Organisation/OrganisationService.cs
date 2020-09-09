@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using VirtualBridge.Data;
@@ -66,7 +67,7 @@ namespace VirtualBridge.Service.Organisation
             async Task CreateOrganisationInternalAsync()
             {
                 this.logger.LogTrace(
-                    "ENTRY {Method}(who, organisation) {@who} {@organisation}",
+                    "ENTRY {Method}(who, organisation) {@Who} {@Organisation}",
                     nameof(this.CreateAsync),
                     who,
                     organisation);
@@ -93,9 +94,39 @@ namespace VirtualBridge.Service.Organisation
                 }
 
                 this.logger.LogTrace(
-                    "EXIT {Method}(who) {@who}",
+                    "EXIT {Method}(who) {@Who}",
                     nameof(this.CreateAsync),
                     who);
+            }
+        }
+
+        /// <inheritdoc />
+        public Task<IList<IOrganisation>> GetAllAsync(IWho who)
+        {
+            if (who == null)
+            {
+                throw new ArgumentNullException(nameof(who));
+            }
+
+            return GetAllAsyncInternal();
+
+            async Task<IList<IOrganisation>> GetAllAsyncInternal()
+            {
+                this.logger.LogTrace(
+                    "ENTRY {Method}(who, organisation) {@Who}",
+                    nameof(this.GetAllAsync),
+                    who);
+
+                IList<IOrganisation> organisations = await this.data.Organisation.GetAllAsync(
+                    who: who)
+                    .ConfigureAwait(false);
+
+                this.logger.LogTrace(
+                    "EXIT {Method}(who, organisations) {@Who} {@organisations}",
+                    nameof(this.GetAllAsync),
+                    who);
+
+                return organisations;
             }
         }
     }
