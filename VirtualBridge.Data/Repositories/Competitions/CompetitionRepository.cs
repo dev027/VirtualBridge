@@ -1,4 +1,4 @@
-﻿// <copyright file="HostRepository.cs" company="Do It Wright">
+﻿// <copyright file="CompetitionRepository.cs" company="Do It Wright">
 // Copyright (c) Do It Wright. All rights reserved.
 // </copyright>
 
@@ -10,30 +10,31 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using VirtualBridge.Data.DbContexts;
 using VirtualBridge.Data.Dtos;
+using VirtualBridge.Data.Repositories.Hosts;
 using VirtualBridge.Data.Utilities;
 using VirtualBridge.Domain.DomainObjects.AuditHeaders;
-using VirtualBridge.Domain.DomainObjects.Hosts;
+using VirtualBridge.Domain.DomainObjects.Competitions;
 using VirtualBridge.Utilities.Models.Whos;
 
-namespace VirtualBridge.Data.Repositories.Hosts
+namespace VirtualBridge.Data.Repositories.Competitions
 {
     /// <summary>
     /// Audit Header Repository.
     /// </summary>
-    public class HostRepository : RepositoryBase, IHostRepository
+    public class CompetitionRepository : RepositoryBase, ICompetitionRepository
     {
         private readonly DataContext context;
         private readonly ILogger<HostRepository> logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HostRepository"/> class.
+        /// Initializes a new instance of the <see cref="CompetitionRepository"/> class.
         /// </summary>
         /// <param name="logger">Logger.</param>
         /// <param name="dataContext">Data context.</param>
-        public HostRepository(
+        public CompetitionRepository(
             ILogger<HostRepository> logger,
             DataContext dataContext)
-            : base(nameof(HostRepository))
+            : base(nameof(CompetitionRepository))
         {
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.context = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
@@ -43,17 +44,17 @@ namespace VirtualBridge.Data.Repositories.Hosts
         public async Task CreateAsync(
             IWho who,
             IAuditHeaderWithAuditDetails auditHeader,
-            IHost host)
+            ICompetition competition)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who, organisation) {@Who} {@Host}",
+                "ENTRY {Method}(who, organisation) {@Who} {@Competition}",
                 nameof(this.CreateAsync),
                 who,
-                host);
+                competition);
 
-            HostDto dto = HostDto.ToDto(host);
+            CompetitionDto dto = CompetitionDto.ToDto(competition);
 
-            this.context.Hosts.Add(dto);
+            this.context.Competitions.Add(dto);
             await this.context.SaveChangesAsync().ConfigureAwait(false);
             Audit.AuditCreate(auditHeader, dto, dto.Id);
 
@@ -64,54 +65,54 @@ namespace VirtualBridge.Data.Repositories.Hosts
         }
 
         /// <inheritdoc/>
-        public async Task<IList<IHost>> GetAllAsync(IWho who)
+        public async Task<IList<ICompetition>> GetAllAsync(IWho who)
         {
             this.logger.LogTrace(
                 "ENTRY {Method}(who) {@Who}",
                 nameof(this.GetAllAsync),
                 who);
 
-            IList<HostDto> dtos = await this.context.Hosts
+            IList<CompetitionDto> dtos = await this.context.Competitions
                 .AsNoTracking()
                 .TagWith(this.Tag(who, nameof(this.GetAllAsync)))
                 .ToListAsync()
                 .ConfigureAwait(false);
 
-            IList<IHost> hosts = dtos.Select(h => h.ToDomain())
+            IList<ICompetition> competitions = dtos.Select(c => c.ToDomain())
                 .ToList();
 
             this.logger.LogTrace(
-                "EXIT {Method}(who, organisations) {@Who} {@Hosts}",
+                "EXIT {Method}(who, organisations) {@Who} {@Competitions}",
                 nameof(this.GetAllAsync),
                 who,
-                hosts);
+                competitions);
 
-            return hosts;
+            return competitions;
         }
 
         /// <inheritdoc/>
-        public async Task<IHost> GetByIdAsync(IWho who, Guid hostId)
+        public async Task<ICompetition> GetByIdAsync(IWho who, Guid competitionId)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who, organisationId) {@Who} {HostId}",
+                "ENTRY {Method}(who, organisationId) {@Who} {CompetitionId}",
                 nameof(this.GetByIdAsync),
                 who,
-                hostId);
+                competitionId);
 
-            IHost host = (await this.context.Hosts
+            ICompetition competition = (await this.context.Competitions
                     .AsNoTracking()
                     .TagWith(this.Tag(who, nameof(this.GetByIdAsync)))
-                    .FirstOrDefaultAsync(h => h.Id == hostId)
+                    .FirstOrDefaultAsync(c => c.Id == competitionId)
                     .ConfigureAwait(false))
                 .ToDomain();
 
             this.logger.LogTrace(
-                "EXIT {Method}(who, organisation) {@Who} {@Host}",
+                "EXIT {Method}(who, organisation) {@Who} {@Competition}",
                 nameof(this.GetByIdAsync),
                 who,
-                host);
+                competition);
 
-            return host;
+            return competition;
         }
 
         /// <inheritdoc/>
@@ -122,34 +123,34 @@ namespace VirtualBridge.Data.Repositories.Hosts
                 nameof(this.HaveAsync),
                 who);
 
-            bool haveHosts = await this.context.Hosts
+            bool haveCompetitions = await this.context.Competitions
                 .TagWith(this.Tag(who, nameof(this.HaveAsync)))
                 .AnyAsync()
                 .ConfigureAwait(false);
 
             this.logger.LogTrace(
-                "EXIT {Method}(who, haveOrganisations) {@Who} {HaveHosts}",
+                "EXIT {Method}(who, haveOrganisations) {@Who} {HaveCompetitions}",
                 nameof(this.HaveAsync),
                 who,
-                haveHosts);
+                haveCompetitions);
 
-            return haveHosts;
+            return haveCompetitions;
         }
 
         /// <inheritdoc/>
         public async Task UpdateAsync(
             IWho who,
             IAuditHeaderWithAuditDetails auditHeader,
-            IHost host)
+            ICompetition competition)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who, host) {@Who} {@Host}",
+                "ENTRY {Method}(who, host) {@Who} {@Competition}",
                 nameof(this.UpdateAsync),
                 who,
-                host);
+                competition);
 
-            HostDto dto = HostDto.ToDto(host);
-            HostDto original = await this.context.FindAsync<HostDto>(host.Id)
+            CompetitionDto dto = CompetitionDto.ToDto(competition);
+            CompetitionDto original = await this.context.FindAsync<CompetitionDto>(competition.Id)
                 .ConfigureAwait(false);
             Audit.AuditUpdate(auditHeader, dto.Id, original, dto);
 

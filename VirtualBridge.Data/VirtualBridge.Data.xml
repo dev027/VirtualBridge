@@ -57,6 +57,11 @@
             Gets or sets the Audit Details.
             </summary>
         </member>
+        <member name="P:VirtualBridge.Data.DbContexts.DataContext.Competitions">
+            <summary>
+            Gets or sets the Competitions.
+            </summary>
+        </member>
         <member name="P:VirtualBridge.Data.DbContexts.DataContext.Hosts">
             <summary>
             Gets or sets the Hosts.
@@ -236,6 +241,89 @@
             <summary>
             Base model for DTOs.
             </summary>
+        </member>
+        <member name="T:VirtualBridge.Data.Dtos.CompetitionDto">
+            <summary>
+            Competition DTO.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.CompetitionDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.CompetitionDto"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.CompetitionDto.#ctor(System.Guid,System.String,System.String,System.DayOfWeek,System.TimeSpan,VirtualBridge.Domain.Constants.ETimePeriod,System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Dtos.CompetitionDto"/> class.
+            </summary>
+            <param name="id">Competition Id.</param>
+            <param name="name">Competition Name.</param>
+            <param name="description">Competition Description.</param>
+            <param name="dayOfWeek">Day of Week.</param>
+            <param name="timeOfDay">Time of Day.</param>
+            <param name="timePeriod">Time Period.</param>
+            <param name="organisationId">Organisation Id.</param>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.Id">
+            <summary>
+            Gets the Competition Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.Name">
+            <summary>
+            Gets the  Name.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.Description">
+            <summary>
+            Gets the  Description.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.DayOfWeek">
+            <summary>
+            Gets the Day of Week.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.TimeOfDay">
+            <summary>
+            Gets the Time of Day.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.TimePeriod">
+            <summary>
+            Gets the Time Period.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.OrganisationId">
+            <summary>
+            Gets the Organisation Id.
+            </summary>
+        </member>
+        <member name="P:VirtualBridge.Data.Dtos.CompetitionDto.Organisation">
+            <summary>
+            Gets the Organisation.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.CompetitionDto.OnModelBuilding(Microsoft.EntityFrameworkCore.ModelBuilder,Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToStringConverter{System.DayOfWeek},Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToStringConverter{VirtualBridge.Domain.Constants.ETimePeriod})">
+            <summary>
+            Called when [model building].
+            </summary>
+            <param name="modelBuilder">The model builder.</param>
+            <param name="converterDayOfWeek">Day of week converter.</param>
+            <param name="converterETimePeriod">Time period converter.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.CompetitionDto.ToDto(VirtualBridge.Domain.DomainObjects.Competitions.ICompetition)">
+            <summary>
+            Converts domain object to DTO.
+            </summary>
+            <param name="competition">Competition.</param>
+            <returns>Competition DTO.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Dtos.CompetitionDto.ToDomain">
+            <summary>
+            Converts instance to domain object.
+            </summary>
+            <returns>Competition.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Dtos.HostDto">
             <summary>
@@ -480,6 +568,78 @@
             </summary>
             <param name="who">Who details.</param>
             <param name="auditHeader">Audit Header with Audit Details.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository">
+            <summary>
+            Audit Header Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository.#ctor(Microsoft.Extensions.Logging.ILogger{VirtualBridge.Data.Repositories.Hosts.HostRepository},VirtualBridge.Data.DbContexts.DataContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository"/> class.
+            </summary>
+            <param name="logger">Logger.</param>
+            <param name="dataContext">Data context.</param>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Competitions.ICompetition)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository.GetByIdAsync(VirtualBridge.Utilities.Models.Whos.IWho,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository.HaveAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.CompetitionRepository.UpdateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Competitions.ICompetition)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VirtualBridge.Data.Repositories.Competitions.ICompetitionRepository">
+            <summary>
+            Competition Repository.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.ICompetitionRepository.CreateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Competitions.ICompetition)">
+            <summary>
+            Creates the Competition.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="competition">Competition.</param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.ICompetitionRepository.GetAllAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Gets all competitions.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>List of Competitions.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.ICompetitionRepository.GetByIdAsync(VirtualBridge.Utilities.Models.Whos.IWho,System.Guid)">
+            <summary>
+            Gets the Competition by Id.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="competitionId">Competition Id.</param>
+            <returns>Competition (Null=Not Found).</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.ICompetitionRepository.HaveAsync(VirtualBridge.Utilities.Models.Whos.IWho)">
+            <summary>
+            Checks if we have Competitions.
+            </summary>
+            <param name="who">Who details.</param>
+            <returns>True if Competition exist.</returns>
+        </member>
+        <member name="M:VirtualBridge.Data.Repositories.Competitions.ICompetitionRepository.UpdateAsync(VirtualBridge.Utilities.Models.Whos.IWho,VirtualBridge.Domain.DomainObjects.AuditHeaders.IAuditHeaderWithAuditDetails,VirtualBridge.Domain.DomainObjects.Competitions.ICompetition)">
+            <summary>
+            Updates the Competition.
+            </summary>
+            <param name="who">Who details.</param>
+            <param name="auditHeader">Audit Header.</param>
+            <param name="competition">Competition.</param>
             <returns>Nothing.</returns>
         </member>
         <member name="T:VirtualBridge.Data.Repositories.Hosts.HostRepository">

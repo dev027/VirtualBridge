@@ -7,6 +7,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using VirtualBridge.Data.Dtos;
+using VirtualBridge.Domain.Constants;
 
 namespace VirtualBridge.Data.DbContexts
 {
@@ -46,6 +49,14 @@ namespace VirtualBridge.Data.DbContexts
             }
 
             base.OnModelCreating(builder);
+
+            EnumToStringConverter<DayOfWeek> converterDayOfWeek = new EnumToStringConverter<DayOfWeek>();
+            EnumToStringConverter<ETimePeriod> converterTimePeriod = new EnumToStringConverter<ETimePeriod>();
+
+            CompetitionDto.OnModelBuilding(
+                builder,
+                converterDayOfWeek,
+                converterTimePeriod);
 
             DisableCascadeDeletes(builder);
         }

@@ -3,10 +3,8 @@
 // </copyright>
 
 using System;
-using System.Linq;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using VirtualBridge.Data.DbContexts;
 
 namespace VirtualBridge.Migration.DbContexts
 {
@@ -14,8 +12,16 @@ namespace VirtualBridge.Migration.DbContexts
     /// Migration Context.
     /// </summary>
     /// <seealso cref="DbContext" />
-    public partial class MigrationContext : IdentityDbContext
+    public class MigrationContext : DataContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationContext"/> class.
+        /// </summary>
+        public MigrationContext()
+            : base(new DbContextOptions<MigrationContext>())
+        {
+        }
+
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,35 +40,6 @@ namespace VirtualBridge.Migration.DbContexts
                                             "Integrated Security=True";
 
             optionsBuilder.UseSqlServer(connectionString);
-        }
-
-        /// <summary>
-        /// Override this method to further configure the model that was discovered by convention from the entity types
-        /// exposed in dbset properties on your derived context. The resulting model may be cached
-        /// and re-used for subsequent instances of your derived context.
-        /// </summary>
-        /// <param name="builder">The builder being used to construct the model for this context. Databases (and other extensions) typically
-        /// define extension methods on this object that allow you to configure aspects of the model that are specific
-        /// to a given database.</param>
-        /// <exception cref="ArgumentNullException">modelBuilder.</exception>
-        /// <remarks>
-        /// If a model is explicitly set on the options for this context" />)
-        /// then this method will not be run.
-        /// </remarks>
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            if (builder == null)
-            {
-                throw new ArgumentNullException(nameof(builder));
-            }
-
-            base.OnModelCreating(builder);
-
-            foreach (IMutableForeignKey foreignKey in builder.Model.GetEntityTypes()
-                .SelectMany(e => e.GetForeignKeys()))
-            {
-                foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
-            }
         }
     }
 }
