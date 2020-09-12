@@ -7,7 +7,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Competitions;
 using VirtualBridge.Domain.DomainObjects.Organisations;
-using VirtualBridge.Domain.DomainObjects.RegularCompetitions;
 using VirtualBridge.Domain.Exceptions;
 
 namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
@@ -42,7 +41,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: paramName,
                 description: paramDescription,
@@ -77,7 +76,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: null!,
                 description: paramDescription,
@@ -108,7 +107,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: string.Empty,
                 description: paramDescription,
@@ -140,7 +139,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: paramName,
                 description: paramDescription,
@@ -175,7 +174,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: paramName,
                 description: null!,
@@ -206,7 +205,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: paramName,
                 description: string.Empty,
@@ -238,7 +237,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: paramName,
                 description: paramDescription,
@@ -249,6 +248,78 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
         }
 
         #endregion Property: Description
+
+        #region Property: TimeOfDay
+
+        /// <summary>
+        /// Tests that an invalid time of day throws exception.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ValidationResultException))]
+        public void TestInvalidTimeOfDayThrowsException()
+        {
+            // ARRANGE
+            Guid paramId = Guid.NewGuid();
+            const string paramName = "Saturday Pairs";
+            const string paramDescription = "Fortnightly MP Pairs";
+            IOrganisation paramOrganisation = new Organisation(
+                id: Guid.NewGuid(),
+                shortName: "LCBA",
+                mediumName: "LCBA",
+                longName: "Leicestershire Contract Bridge Association",
+                code: "LCBA");
+            const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
+            TimeSpan paramTimeOfDay = new TimeSpan(1, 0, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
+
+            // ACT
+            _ = new Competition(
+                id: paramId,
+                name: paramName,
+                description: paramDescription,
+                organisation: paramOrganisation,
+                dayOfWeek: paramDayOfWeek,
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
+        }
+
+        #endregion Property: TimeOfDay
+
+        #region Property: TimePeriod
+
+        /// <summary>
+        /// Tests that an invalid time period throws exception.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ValidationResultException))]
+        public void TestInvalidTimePeriodThrowsException()
+        {
+            // ARRANGE
+            Guid paramId = Guid.NewGuid();
+            const string paramName = "Saturday Pairs";
+            const string paramDescription = "Fortnightly MP Pairs";
+            IOrganisation paramOrganisation = new Organisation(
+                id: Guid.NewGuid(),
+                shortName: "LCBA",
+                mediumName: "LCBA",
+                longName: "Leicestershire Contract Bridge Association",
+                code: "LCBA");
+            const DayOfWeek paramDayOfWeek = DayOfWeek.Saturday;
+            TimeSpan paramTimeOfDay = new TimeSpan(10, 0, 0, 0);
+            const ETimePeriod paramTimePeriod = ETimePeriod.Afternoon;
+
+            // ACT
+            _ = new Competition(
+                id: paramId,
+                name: paramName,
+                description: paramDescription,
+                organisation: paramOrganisation,
+                dayOfWeek: paramDayOfWeek,
+                timeOfDay: paramTimeOfDay,
+                timePeriod: paramTimePeriod);
+        }
+
+        #endregion
 
         #region Property: Organisation
 
@@ -268,7 +339,7 @@ namespace VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests
             const ETimePeriod paramTimePeriod = ETimePeriod.Morning;
 
             // ACT
-            _ = new RegularCompetition(
+            _ = new Competition(
                 id: paramId,
                 name: paramName,
                 description: paramDescription,

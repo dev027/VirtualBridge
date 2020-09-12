@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Organisations;
 
 namespace VirtualBridge.Domain.DomainObjects.Competitions
@@ -26,6 +27,21 @@ namespace VirtualBridge.Domain.DomainObjects.Competitions
         /// Gets the Description.
         /// </summary>
         string Description { get; }
+
+        /// <summary>
+        /// Gets the Day of Week.
+        /// </summary>
+        DayOfWeek DayOfWeek { get; }
+
+        /// <summary>
+        /// Gets the Time of day.
+        /// </summary>
+        TimeSpan TimeOfDay { get; }
+
+        /// <summary>
+        /// Gets the Time Period.
+        /// </summary>
+        ETimePeriod TimePeriod { get; }
 
         /// <summary>
         /// Gets the Organisation.

@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using VirtualBridge.Domain.Constants;
 using VirtualBridge.Domain.DomainObjects.Organisations;
 using VirtualBridge.Domain.ValidationAttributes;
 
@@ -13,7 +14,7 @@ namespace VirtualBridge.Domain.DomainObjects.Competitions
     /// Competition.
     /// </summary>
     /// <seealso cref="ICompetition" />
-    public abstract class Competition : BaseDomainModel, ICompetition
+    public class Competition : BaseDomainModel, ICompetition
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Competition"/> class.
@@ -21,17 +22,28 @@ namespace VirtualBridge.Domain.DomainObjects.Competitions
         /// <param name="id">Competition Id.</param>
         /// <param name="name">Competition Name.</param>
         /// <param name="description">Description.</param>
+        /// <param name="dayOfWeek">Day of the Week.</param>
+        /// <param name="timeOfDay">Time of the Day.</param>
+        /// <param name="timePeriod">Time Period.</param>
         /// <param name="organisation">Organisation.</param>
-        protected Competition(
+        public Competition(
             Guid id,
             string name,
             string description,
+            DayOfWeek dayOfWeek,
+            TimeSpan timeOfDay,
+            ETimePeriod timePeriod,
             IOrganisation organisation)
         {
             this.Id = id;
             this.Name = name;
             this.Description = description;
+            this.DayOfWeek = dayOfWeek;
+            this.TimeOfDay = timeOfDay;
+            this.TimePeriod = timePeriod;
             this.Organisation = organisation;
+
+            Validate(this);
         }
 
         /// <inheritdoc/>
@@ -51,6 +63,18 @@ namespace VirtualBridge.Domain.DomainObjects.Competitions
             maximumLength: Metadata.Description.MaxLength,
             MinimumLength = Metadata.Description.MinLength)]
         public string Description { get; }
+
+        /// <inheritdoc/>
+        public DayOfWeek DayOfWeek { get; }
+
+        /// <inheritdoc/>
+        [Required]
+        [ValidTimeOfDay]
+        public TimeSpan TimeOfDay { get; }
+
+        /// <inheritdoc/>
+        [ValidTimePeriod(nameof(TimeOfDay))]
+        public ETimePeriod TimePeriod { get; }
 
         /// <inheritdoc />
         [Required]

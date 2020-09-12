@@ -220,6 +220,16 @@
             Tests that a long description throws exception.
             </summary>
         </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestInvalidTimeOfDayThrowsException">
+            <summary>
+            Tests that an invalid time of day throws exception.
+            </summary>
+        </member>
+        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestInvalidTimePeriodThrowsException">
+            <summary>
+            Tests that an invalid time period throws exception.
+            </summary>
+        </member>
         <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Competitions.CompetitionTests.ConstructorTests.TestNullOrganisationThrowsException">
             <summary>
             Tests that a null organisation throws exception.
@@ -343,26 +353,6 @@
         <member name="M:VirtualBridge.Domain.Tests.DomainObjects.Organisations.OrganisationTests.ConstructorTests.TestLongCodeThrowsException">
             <summary>
             Tests that a long code throws exception.
-            </summary>
-        </member>
-        <member name="T:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests">
-            <summary>
-            Constructor tests for <see cref="T:VirtualBridge.Domain.DomainObjects.RegularCompetitions.IRegularCompetition"/>.
-            </summary>
-        </member>
-        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestConstructorWithValidValues">
-            <summary>
-            Tests the constructor with valid values.
-            </summary>
-        </member>
-        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestInvalidTimeOfDayThrowsException">
-            <summary>
-            Tests that an invalid time of day throws exception.
-            </summary>
-        </member>
-        <member name="M:VirtualBridge.Domain.Tests.DomainObjects.RegularCompetitions.RegularCompetitionTests.ConstructorTests.TestInvalidTimePeriodThrowsException">
-            <summary>
-            Tests that an invalid time period throws exception.
             </summary>
         </member>
         <member name="T:VirtualBridge.Domain.Tests.Extensions.TimeSpans.ToTimePeriodTests">
