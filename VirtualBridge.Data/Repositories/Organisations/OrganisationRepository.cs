@@ -46,7 +46,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
             IOrganisation organisation)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who, organisation) {@who} {@organisation}",
+                "ENTRY {Method}(who, organisation) {@Who} {@Organisation}",
                 nameof(this.CreateAsync),
                 who,
                 organisation);
@@ -58,7 +58,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
             Audit.AuditCreate(auditHeader, dto, dto.Id);
 
             this.logger.LogTrace(
-                "EXIT {Method}(who) {@who}",
+                "EXIT {Method}(who) {@Who}",
                 nameof(this.CreateAsync),
                 who);
         }
@@ -67,7 +67,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
         public async Task<IList<IOrganisation>> GetAllAsync(IWho who)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who) {@who}",
+                "ENTRY {Method}(who) {@Who}",
                 nameof(this.GetAllAsync),
                 who);
 
@@ -81,7 +81,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
                 .ToList();
 
             this.logger.LogTrace(
-                "EXIT {Method}(who, organisations) {@who} {@organisations}",
+                "EXIT {Method}(who, organisations) {@Who} {@Organisations}",
                 nameof(this.GetAllAsync),
                 who,
                 organisations);
@@ -93,7 +93,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
         public async Task<IOrganisation> GetByIdAsync(IWho who, Guid organisationId)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who, organisationId) {@who} {organisationId}",
+                "ENTRY {Method}(who, organisationId) {@Who} {OrganisationId}",
                 nameof(this.GetByIdAsync),
                 who,
                 organisationId);
@@ -101,12 +101,12 @@ namespace VirtualBridge.Data.Repositories.Organisations
             IOrganisation organisation = (await this.context.Organisations
                     .AsNoTracking()
                     .TagWith(this.Tag(who, nameof(this.GetByIdAsync)))
-                    .FirstOrDefaultAsync(o => o.Id == organisationId)
+                    .SingleAsync(o => o.Id == organisationId)
                     .ConfigureAwait(false))
                 .ToDomain();
 
             this.logger.LogTrace(
-                "EXIT {Method}(who, organisation) {@who} {@organisation}",
+                "EXIT {Method}(who, organisation) {@Who} {@Organisation}",
                 nameof(this.GetByIdAsync),
                 who,
                 organisation);
@@ -118,7 +118,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
         public async Task<bool> HaveAsync(IWho who)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who) {@who}",
+                "ENTRY {Method}(who) {@Who}",
                 nameof(this.HaveAsync),
                 who);
 
@@ -128,7 +128,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
                 .ConfigureAwait(false);
 
             this.logger.LogTrace(
-                "EXIT {Method}(who, haveOrganisations) {@who} {haveOrganisations}",
+                "EXIT {Method}(who, haveOrganisations) {@Who} {HaveOrganisations}",
                 nameof(this.HaveAsync),
                 who,
                 haveOrganisations);
@@ -143,7 +143,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
             IOrganisation organisation)
         {
             this.logger.LogTrace(
-                "ENTRY {Method}(who, organisation) {@who} {@organisation}",
+                "ENTRY {Method}(who, organisation) {@Who} {@Organisation}",
                 nameof(this.UpdateAsync),
                 who,
                 organisation);
@@ -157,7 +157,7 @@ namespace VirtualBridge.Data.Repositories.Organisations
             await this.context.SaveChangesAsync().ConfigureAwait(false);
 
             this.logger.LogTrace(
-                "EXIT {Method}(who) {@who}",
+                "EXIT {Method}(who) {@Who}",
                 nameof(this.UpdateAsync),
                 who);
         }

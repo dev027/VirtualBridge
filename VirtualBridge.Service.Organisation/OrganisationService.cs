@@ -122,7 +122,7 @@ namespace VirtualBridge.Service.Organisation
                     .ConfigureAwait(false);
 
                 this.logger.LogTrace(
-                    "EXIT {Method}(who, organisations) {@Who} {@organisations}",
+                    "EXIT {Method}(who, organisations) {@Who} {@Organisations}",
                     nameof(this.GetAllAsync),
                     who);
 

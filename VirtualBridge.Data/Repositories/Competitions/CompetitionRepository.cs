@@ -102,7 +102,7 @@ namespace VirtualBridge.Data.Repositories.Competitions
             ICompetition competition = (await this.context.Competitions
                     .AsNoTracking()
                     .TagWith(this.Tag(who, nameof(this.GetByIdAsync)))
-                    .FirstOrDefaultAsync(c => c.Id == competitionId)
+                    .SingleAsync(c => c.Id == competitionId)
                     .ConfigureAwait(false))
                 .ToDomain();
 

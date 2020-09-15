@@ -101,7 +101,7 @@ namespace VirtualBridge.Data.Repositories.Hosts
             IHost host = (await this.context.Hosts
                     .AsNoTracking()
                     .TagWith(this.Tag(who, nameof(this.GetByIdAsync)))
-                    .FirstOrDefaultAsync(h => h.Id == hostId)
+                    .SingleAsync(h => h.Id == hostId)
                     .ConfigureAwait(false))
                 .ToDomain();
 
