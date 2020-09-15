@@ -6,7 +6,7 @@ namespace VirtualBridge.Data.Dtos
     /// <summary>
     /// Base model for DTOs.
     /// </summary>
-    public class BaseDto
+    public abstract class BaseDto
     {
     }
 }
