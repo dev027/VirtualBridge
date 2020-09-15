@@ -37,7 +37,7 @@ namespace VirtualBridge.Domain.ValidationAttributes
         /// An instance of the <see cref="ValidationResult"></see> class.
         /// </returns>
         /// <exception cref="ArgumentException">Time of Day property not found.</exception>
-        [SuppressMessage("Microsoft.Design", "CA1062", Justification = "validationContext is always null")]
+        [SuppressMessage("Microsoft.Design", "CA1062", Justification = "validationContext is always non-null")]
         protected override ValidationResult IsValid(
             object value,
             ValidationContext validationContext)
